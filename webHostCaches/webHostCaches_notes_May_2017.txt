@@ -1,0 +1,75 @@
+
+Note: to do it manually, the name of the file to edit is : C:\Program Files (x86)\MUTE\settings\webHostCaches.ini
+
+        Status: open
+        Group: v1.0_(example)
+        Created: Thu Apr 16, 2015 09:06 PM UTC by Gallaxial
+        Last Updated: Thu Apr 16, 2015 09:06 PM UTC
+        Owner: nobody
+
+        All version of Mute , only 3 Cache Work (Update your webHostCaches server)
+
+        http://mcache.northcountrynotes.org/mcache.php
+        http://reezer.freeshell.org/mcache/mcache.php
+        http://mcache.mccarragher.org/mcached/mcache.php Only one can view
+        STATS/DATA
+
+        All the following are Discontinue !!
+        http://devianthosting.co.uk/cache/mcache.php
+        http://fischaleck.net/cache/mcache.php
+        http://mcache.firstlight.dk/mcache.php
+        http://mcache.guenever.net/mcache.php
+        http://mcache.hleroy.com/mcache.php
+        http://mute.filesharingdownloads.com/mcache.php
+        http://mute.frac.dk/mcache.php
+        http://mute.hotserv.dk/mcache.php
+        http://mutecache.ath.cx/mcache.php
+        http://mutecache.lxhost.com/mcache.php
+        http://www.flatplanetcafe.net/mutewc/mcache.php
+        http://www.mymute.net/mutewebcache/mcache.php
+        http://www.rent-a-nerd.dk/mute/mcache.php
+
+        Sent from sourceforge.net because you indicated interest in
+        https://sourceforge.net/p/mfc-mute-net/support-requests/2/
+
+        To unsubscribe from further messages, please visit
+        https://sourceforge.net/auth/subscriptions/
+         
+        Related
+
+        Support Requests: #2
+        alternate
+
+    ale5000
+    ale5000 - 2016-04-13
+
+    One GWebCache MUTE compatible: http://disobscure.velum-ultra.com/skulls.php
+
+
+    Webcaches list currently working :
+    http://mcache.northcountrynotes.org/mcache.php
+    http://disobscure.velum-ultra.com/skulls.php
+    http://skulls-milanesi.rhcloud.com/skulls.php
+    http://gwc.centrump2p.com/skulls.php
+    http://reezer.freeshell.org/mcache/mcache.php
+
+    Note 1: http://reezer.freeshell.org seems to not work 100 % (does not get IPs)
+    Note 2: https://gwc-ale5000.rhcloud.com/skulls.php seems unusable because requiring SSL.
+     
+
+    ale5000
+    ale5000 - 5 days ago
+
+    1) reezer.freeshell.org use a version of the cache not compatible with new version of PHP so it doesn't work at all (it is only able to display the main page, it ignore all parameters).
+    2) Yes, gwc-ale5000.rhcloud.com can be used only by applications supporting HTTPS.
+     
+
+    Tobias Bo Hansen
+    Tobias Bo Hansen - 6 hours ago
+
+    I want to add the below webcache to the list!
+
+    http://www.tech-people.dk/mcache.php
+    http://mcache.firstlight.dk/mcache.php
+     
+    Last edit: Tobias Bo Hansen 4 hours ago 
