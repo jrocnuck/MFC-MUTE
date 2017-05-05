@@ -1,0 +1,2 @@
+g++ -g -I../../.. -o testCryptoUtils testCryptoUtils.cpp ../CryptoUtils.o ../../crypto/libcrypto.a  ../../../minorGems/system/linux/MutexLockLinux.o
+

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+#
+# Modification History
+#
+# 2003-December-15   Jason Rohrer
+# Copied from Unix script.
+#
+# 2004-January-20   Jason Rohrer
+# Changed to use common settings folder.
+#
+# 2004-February-29   Jason Rohrer
+# Added settings readme.
+#
+
+
+if [ $# -lt 2 ] ; then
+   echo "Usage: $0 release_name unix_platform_name"
+   exit 1
+fi
+
+
+rm -rf mac
+
+mkdir mac
+
+mkdir mac/MUTE
+mkdir mac/MUTE/settings
+
+cp ../../settings/*.ini ../../settings/README.txt mac/MUTE/settings
+
+mkdir mac/MUTE/files
+
+
+cp -r macOSX/fileSharingMUTE.app mac/MUTE
+cp ../fileSharingMUTE mac/MUTE/fileSharingMUTE.app/Contents/MacOS
+
+rm -r mac/MUTE/fileSharingMUTE.app/CVS
+rm -r mac/MUTE/fileSharingMUTE.app/Contents/CVS
+rm -r mac/MUTE/fileSharingMUTE.app/Contents/MacOS/CVS
+rm -r mac/MUTE/fileSharingMUTE.app/Contents/Resources/CVS
+
+
+cd mac
+tar cf "MUTE_$1_$2.tar" MUTE
+gzip "MUTE_$1_$2.tar"
+
+
+
+
+
+

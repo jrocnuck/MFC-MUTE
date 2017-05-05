@@ -1,0 +1,107 @@
+#
+# Modification History
+#
+# 2003-October-26   Jason Rohrer
+# Created.
+#
+# 2003-October-27   Jason Rohrer
+# Fixed dependency bug.  Added support for download components.
+#
+# 2003-October-28   Jason Rohrer
+# Added a panel of active connections.
+#
+# 2003-November-4   Jason Rohrer
+# Added a settings panel.
+# Added an uploads panel.
+#
+# 2003-November-6   Jason Rohrer
+# Added common formatting code.
+#
+# 2003-December-15   Jason Rohrer
+# Moved into template Makefile.all.
+#
+# 2004-January-4   Jason Rohrer
+# Added extra library for windows wx gui build.
+#
+# 2004-January-5    Jason Rohrer
+# Added explicit library dependencies.
+#
+# 2004-January-18    Jason Rohrer
+# Added target for leak testing app.
+#
+
+
+##
+# The portion of MUTE file sharing wxWindows-UI Makefiles common to all 
+# platforms.
+# Should not be made manually---used by MUTE/configure to build Makefiles.
+##
+
+
+ROOT_PATH = ../../../../..
+
+WX_LIBS = $(shell ${WX_CONFIG_LOCATION} --libs)
+WX_COMPILE_FLAGS = $(shell ${WX_CONFIG_LOCATION} --cxxflags)
+
+
+CRYPTO_LIB = ${ROOT_PATH}/MUTE/crypto/libcrypto.a
+ROUTING_LIB = ${ROOT_PATH}/MUTE/layers/messageRouting/libmuteMessageRouter.a
+FILE_SHARING_LIB = ${ROOT_PATH}/MUTE/otherApps/fileSharing/libmuteFileShare.a
+
+
+
+
+fileSharingMUTE: GuiApp.o SearchPanel.o DownloadPanel.o DownloadItem.o ConnectionsPanel.o SettingsPanel.o UploadsPanel.o ../common/formatUtils.o ${FILE_SHARING_LIB} ${ROUTING_LIB} ${CRYPTO_LIB}
+	g++ -g -o fileSharingMUTE GuiApp.o SearchPanel.o DownloadPanel.o DownloadItem.o ConnectionsPanel.o SettingsPanel.o UploadsPanel.o ../common/formatUtils.o ${WX_LIBS} ${WX_COMPILE_FLAGS} -I${ROOT_PATH} ${FILE_SHARING_LIB} ${ROUTING_LIB} ${CRYPTO_LIB} ${EXTRA_WX_LIBS}
+
+
+# targets that throw errors if the libraries need to be re-made
+
+${FILE_SHARING_LIB}:
+	$(error ${FILE_SHARING_LIB} is outdated.  Please re-make it)
+${ROUTING_LIB}:
+	$(error ${ROUTING_LIB} is outdated.  Please re-make it)
+${CRYPTO_LIB}:
+	$(error ${CRYPTO_LIB} is outdated.  Please re-make it)
+
+
+# target for leak testing app
+test/testLeaks: test/TestLeaks.o
+	g++ -g -o test/testLeaks test/TestLeaks.o ${WX_LIBS} ${WX_COMPILE_FLAGS} -I${ROOT_PATH} ${EXTRA_WX_LIBS}
+
+
+
+# 
+# Generic:
+#
+# Map all .cpp C++ into .o object files
+#
+# $@   represents the name.o file
+# $<   represents the name.cpp file
+#
+.cpp.o:
+	g++ -g -c -I${ROOT_PATH} ${WX_COMPILE_FLAGS} -o $@ $<
+
+
+
+GuiApp.o: GuiApp.cpp SearchPanel.h DownloadPanel.h ConnectionsPanel.h SettingsPanel.h UploadsPanel.h
+
+
+SearchPanel.o: SearchPanel.h SearchPanel.cpp
+
+
+DownloadPanel.o: DownloadPanel.h DownloadPanel.cpp DownloadItem.h
+
+DownloadItem.o: DownloadItem.h DownloadItem.cpp
+
+
+ConnectionsPanel.o: ConnectionsPanel.h ConnectionsPanel.cpp
+
+SettingsPanel.o: SettingsPanel.h SettingsPanel.cpp
+
+UploadsPanel.o: UploadsPanel.h UploadsPanel.cpp
+
+
+../common/formatUtils.o:  ../common/formatUtils.h ../common/formatUtils.cpp
+
+

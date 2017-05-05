@@ -1,0 +1,711 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      MOVEABLE PURE   "res\\MUTE_MFC_GUI.manifest"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "//#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MFC_MUTE_GUI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MUTE_ICON           ICON    DISCARDABLE     "res\\fileSharingMUTE.ico"
+IDI_NETWORK_ICON        ICON    DISCARDABLE     "res\\22-Vaio2 Network Neighborhood.ico"
+IDI_DOWNLOAD_ICON       ICON    DISCARDABLE     "res\\download.ico"
+IDI_PREFERENCES_ICON    ICON    DISCARDABLE     "res\\Prefs_General.ico"
+IDI_SEARCH_ICON         ICON    DISCARDABLE     "res\\SearchResults.ico"
+IDI_UPLOAD_ICON         ICON    DISCARDABLE     "res\\upload.ico"
+IDI_FOLDER_ICON         ICON    DISCARDABLE     "res\\Open.ico"
+IDI_TRASH_ICON          ICON    DISCARDABLE     "res\\TRASH.ICO"
+IDI_MESSAGE_ICON        ICON    DISCARDABLE     "res\\MESSAGE.ICO"
+IDI_WWW_WEB_ICON        ICON    DISCARDABLE     "res\\WebBased.ico"
+IDI_FLAG_USA_ICON       ICON    DISCARDABLE     "res\\flags\\U_S_A.ICO"
+IDI_FLAG_GERMANY_ICON   ICON    DISCARDABLE     "res\\flags\\GERMANY.ICO"
+IDI_FLAG_ITALY_ICON     ICON    DISCARDABLE     "res\\flags\\ITALY.ICO"
+IDI_FLAG_FRANCE_ICON    ICON    DISCARDABLE     "res\\flags\\FRANCE.ICO"
+IDI_MUTE_HELP_ICON      ICON    DISCARDABLE     "res\\mute_help.ico"
+IDI_EXTERN_LANG_ICON    ICON    DISCARDABLE     "res\\extern_l.ico"
+IDI_BACK_ICON           ICON    DISCARDABLE     "res\\back.ico"
+IDI_NEXT_ICON           ICON    DISCARDABLE     "res\\next.ico"
+IDI_PREFERENCES_2_ICON  ICON    DISCARDABLE     "res\\preferences2.ico"
+IDI_DOWNLOAD2_ICON      ICON    DISCARDABLE     "res\\download2.ico"
+IDI_UPLOAD2_ICON        ICON    DISCARDABLE     "res\\upload2.ico"
+IDI_CONNECTIONS_ICON    ICON    DISCARDABLE     "res\\connections.ico"
+IDI_RESTORE_WINDOW_ICON ICON    DISCARDABLE     "res\\RestoreWindow.ico"
+IDI_EXIT_MUTE_ICON      ICON    DISCARDABLE     "res\\Exit.ico"
+IDI_CANCEL_ICON         ICON    DISCARDABLE     "res\\cancel.ico"
+IDI_CLEAR_ICON          ICON    DISCARDABLE     "res\\clear.ico"
+IDI_CLEAR_COMPLETE_ICON ICON    DISCARDABLE     "res\\clear_complete.ico"
+IDI_REMOVE_STALLED_ICON ICON    DISCARDABLE     "res\\clear_stalled.ico"
+IDI_DOWNLOAD3_ICON      ICON    DISCARDABLE     "res\\download3.ico"
+IDI_SHARED_FILES_ICON   ICON    DISCARDABLE     "res\\SharedFilesList.ico"
+IDI_REFRESH_ICON        ICON    DISCARDABLE     "res\\Refresh.ico"
+IDI_PRIORITY_ICON       ICON    DISCARDABLE     "res\\PriorityHigh.ico"
+IDI_FLAG_SPAIN_ICON     ICON    DISCARDABLE     "res\\flags\\SPAIN.ICO"
+IDI_FLAG_DENMARK_ICON   ICON    DISCARDABLE     "res\\flags\\DENMARK.ICO"
+IDI_FLAG_LITHUANIA_ICON ICON    DISCARDABLE     "res\\flags\\LITHUAN.ICO"
+IDI_FLAG_TURKEY_ICON    ICON    DISCARDABLE     "res\\flags\\TURKEY.ICO"
+IDI_SEARCH2_ICON        ICON    DISCARDABLE     "res\\SearchResults2.ico"
+IDI_CLEAR_RESULTS_ICON  ICON    DISCARDABLE     "res\\deleteall.ico"
+IDI_CANCEL_SELECTED_ICON ICON    DISCARDABLE     "res\\DeleteSelected.ico"
+IDI_HOSTLIST_ICON       ICON    DISCARDABLE     "res\\ServerList.ico"
+IDI_ADD_HOST_ICON       ICON    DISCARDABLE     "res\\serveradd.ico"
+IDI_HOSTUPDATE_ICON     ICON    DISCARDABLE     "res\\ServersUpdate.ico"
+IDI_MYINFO_ICON         ICON    DISCARDABLE     "res\\Info.ico"
+IDI_USER_ICON           ICON    DISCARDABLE     "res\\User.ico"
+IDI_SHARED_FILES_EXPORT_ICON ICON    DISCARDABLE     "res\\icon7.ico"
+IDI_SHAREDFILES_ICON    ICON    DISCARDABLE     "res\\SharedFiles.ico"
+IDI_CLEAR2_ICON         ICON    DISCARDABLE     "res\\clear2.ico"
+IDI_EXPORT_RESULTS_ICON ICON    DISCARDABLE     "res\\exportall.ico"
+IDI_CONNECTEDNOTNOT_ICON ICON    DISCARDABLE     "res\\ConnectedNotNot.ico"
+IDI_CONNECTEDLOWLOW_ICON ICON    DISCARDABLE     "res\\ConnectedLowLow.ico"
+IDI_CONNECTEDHIGHHIGH_ICON ICON    DISCARDABLE     "res\\ConnectedHighHigh.ico"
+IDI_UP0DOWN0_ICON       ICON    DISCARDABLE     "res\\Up0down0.ico"
+IDI_UP1DOWN0_ICON       ICON    DISCARDABLE     "res\\Up1down0.ico"
+IDI_UP0DOWN1_ICON       ICON    DISCARDABLE     "res\\Up0down1.ico"
+IDI_UP1DOWN1_ICON       ICON    DISCARDABLE     "res\\Up1down1.ico"
+IDI_DOWNLOAD4_ICON      ICON    DISCARDABLE     "res\\start.ico"
+IDI_DOWNLOAD5_ICON      ICON    DISCARDABLE     "res\\DownloadFiles.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_UP                  BITMAP  MOVEABLE PURE   "res\\up.bmp"
+IDB_DOWN                BITMAP  MOVEABLE PURE   "res\\down.bmp"
+IDB_UP2X                BITMAP  MOVEABLE PURE   "res\\up2x.bmp"
+IDB_DOWN2X              BITMAP  MOVEABLE PURE   "res\\down2x.bmp"
+IDB_LED_BITMAPS         BITMAP  MOVEABLE PURE   "res\\leds.bmp"
+TRAYBUTTON_LUNA_METALLIC_BMP BITMAP  MOVEABLE PURE   "res\\TRAYBUTTON_LUNA_METALLIC.BMP"
+TRAYBUTTON_LUNA_BLUE_BMP BITMAP  MOVEABLE PURE   "res\\TRAYBUTTON_LUNA_BLUE.BMP"
+TRAYBUTTON_LUNA_HOMESTEAD_BMP BITMAP  MOVEABLE PURE   "res\\TRAYBUTTON_LUNA_HOMESTEAD.BMP"
+IDB_ABOUT_LOGO          BITMAP  MOVEABLE PURE   "res\\ABOUT-logo.bmp"
+IDB_ABOUT_BACKGROUND    BITMAP  MOVEABLE PURE   "res\\ABOUT-background.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MUTEMFC2_DIALOG DIALOGEX 0, 0, 530, 274
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MUTE File Sharing -MFC - Version 0.0.7   10-12-2005"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_MUTE_MAIN_TAB,"SysTabControl32",TCS_MULTILINE | 
+                    TCS_TOOLTIPS | 0x8,0,7,530,252,WS_EX_TRANSPARENT | 
+                    WS_EX_RTLREADING
+END
+
+IDD_RANDOM_SEED_DLG DIALOGEX 0, 0, 224, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gathering Randomness"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,83,54,50,14
+    LTEXT           "Encryption Seed -- Enter Some Randomness:\n(More Randomness => More Secure)",
+                    IDC_STATIC_RANDOMNESS_TEXT,7,11,209,19
+    EDITTEXT        IDC_EDIT_RANDOMNESS,7,35,209,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,51,
+                    209,1
+END
+
+IDD_KEY_LENGTH_DLG DIALOG DISCARDABLE  0, 0, 144, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "First Startup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,47,129,50,14
+    LISTBOX         IDC_KEY_LENGTH_LIST,15,49,112,62,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Key generation\nSelect a key size",
+                    IDC_STATIC_KEY_GENERATION_SELECT_SIZE,16,13,86,31
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,15,118,
+                    115,1
+END
+
+IDD_GENERATE_KEY_PAIR_DLG DIALOG DISCARDABLE  0, 0, 116, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "First Startup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,29,74,50,14,WS_DISABLED
+    LTEXT           "Generating a key pair.\nThis may take a while.",
+                    IDC_STATIC_HOW_LONG,15,31,84,23
+END
+
+IDD_MUTE_SEARCH_DLG DIALOGEX 0, 0, 441, 160
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_AND_OR,260,24,113,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SEARCH_STRING_EXCLUDE_EDIT,3,51,187,13,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILESIZE_EDIT,260,51,72,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_FILESIZE,345,51,94,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Search",IDC_SEARCH_BUTTON,65,133,41,20,BS_FLAT
+    PUSHBUTTON      "S&top",IDC_STOP_BUTTON,111,133,41,20,BS_FLAT
+    PUSHBUTTON      "&Purge Hash Folder",IDC_PURGE_HASH_FOLDER,164,133,87,20,
+                    BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "&Export Results",IDC_EXPORT_SEARCH_RESULTS_BUTTON,258,
+                    133,48,20,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "&Clear Results",IDC_CLEAR_SEARCH_RESULTS_BUTTON,312,133,
+                    47,20,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "&Download",IDC_DOWNLOAD_BUTTON,364,133,52,20,BS_FLAT
+    CONTROL         "List1",IDC_SEARCH_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | LVS_OWNERDRAWFIXED | WS_BORDER | 
+                    WS_TABSTOP,3,79,436,48
+    CONTROL         "",IDC_SEARCHING_LED,"Static",SS_BLACKFRAME,3,138,8,8
+    LTEXT           "Idle...",IDC_SEARCHING_TEXT,18,136,35,13,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC_RECTANGLE,"Static",SS_BLACKRECT,189,29,71,
+                    2
+    LTEXT           "Search Boolean:",IDC_SEARCH_BOOLEAN_STATIC,260,9,105,11
+    LTEXT           "Search for these strings (separate words by space):",
+                    IDC_SEARCHFOR_STATIC,3,9,213,10,SS_CENTERIMAGE
+    LTEXT           "File Size Limits (KB):",IDC_FILESIZE_STATIC,257,39,78,
+                    10,SS_CENTERIMAGE
+    LTEXT           "Exclude these strings (separate words by space):",
+                    IDC_EXCLUDE_STATIC,3,39,277,10,SS_CENTERIMAGE
+    LTEXT           "File Size Boolean:",IDC_FILESIZE_BOOLEAN_STATIC,346,39,
+                    93,10
+    ICON            "",IDC_SEARCHLST_ICO,3,65,20,20
+    LTEXT           "Search Results",IDC_RESULTS_LBL,16,67,216,10
+    EDITTEXT        IDC_SEARCH_STRING_EDIT,3,23,187,12,ES_AUTOHSCROLL
+END
+
+IDD_MUTE_DOWNLOADS_DLG DIALOGEX 0, 0, 478, 141
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Purge Incoming Folder",IDC_PURGE_INCOMING_FOLDER,4,90,
+                    82,43,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "E&xplore Incoming Files",IDC_EXPLORE_INCOMING_FOLDER,
+                    102,90,60,43,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "&Explore Shared Files",IDC_EXPLORE_SHARED_FOLDER,169,90,
+                    59,43,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "Clear Co&mpleted Download(s)",
+                    IDC_CLEAR_COMPLETED_BUTTON,238,90,65,43,BS_MULTILINE | 
+                    BS_FLAT
+    PUSHBUTTON      "&Clear Stalled Download(s)",IDC_CLEAR_FAILED_BUTTON,312,
+                    90,68,43,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "Ca&ncel Selected Download(s)",IDC_CANCEL_BUTTON,391,90,
+                    61,43,BS_MULTILINE | BS_FLAT
+    CONTROL         "List1",IDC_DOWNLOAD_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | LVS_OWNERDRAWFIXED | WS_BORDER | 
+                    WS_TABSTOP,4,17,470,68
+    ICON            "",IDC_DOWNLOADS_ICO,7,6,20,20
+    LTEXT           "Downloads",IDC_DOWNLOADS_STATIC,20,7,75,9
+END
+
+IDD_MUTE_UPLOADS_DLG DIALOGEX 0, 0, 393, 137
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_UPLOADS_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | LVS_OWNERDRAWFIXED | WS_BORDER | 
+                    WS_TABSTOP,4,17,385,76
+    PUSHBUTTON      "&Cancel/Clear Selected Upload(s)",IDC_CANCEL_BUTTON,300,
+                    97,89,33,BS_MULTILINE | BS_FLAT
+    PUSHBUTTON      "&Remove All Upload",IDC_REMOVE_ALL_UPLOAD_BUTTON,204,97,
+                    90,33,BS_MULTILINE | BS_FLAT
+    LTEXT           "Static",IDC_UPLOADS_TOTAL_SHOWN_LABEL,4,97,195,10
+    LTEXT           "Static",IDC_UPLOADS_CHUNKS_UPLOADED_LABEL,4,114,195,10
+    ICON            "",IDC_UPLOADS_ICO,7,6,21,20
+    LTEXT           "Uploads",IDC_UPLOADS_STATIC,20,7,75,9
+END
+
+IDD_MUTE_CONNECTIONS_DLG DIALOGEX 0, 0, 470, 226
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_ADDRESS_STRING_EDIT,315,40,90,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PORT_STRING_EDIT,417,40,35,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Add",IDC_ADD_HOST_BUTTON,395,58,61,13,BS_FLAT
+    CONTROL         "List1",IDC_CONNECTION_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | LVS_OWNERDRAWFIXED | WS_BORDER | 
+                    WS_TABSTOP,4,17,300,180
+    LTEXT           "Status Text...",IDC_STATIC_STATUS_STR,4,206,252,15
+    LTEXT           "Address:",IDC_STATIC_ADDRESS,318,27,44,11,
+                    SS_CENTERIMAGE
+    LTEXT           "Port:",IDC_STATIC_PORT,418,28,24,11,SS_CENTERIMAGE
+    LTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_LEFT_1,
+                    313,138,53,8
+    GROUPBOX        "Add Host",IDC_STATIC_ADDHOST_GROUP,308,12,157,63
+    GROUPBOX        "Update Hosts from URL",IDC_STATIC_UPDATEHOSTS,308,76,
+                    157,49
+    GROUPBOX        "My Info",IDC_STATIC_MYINFO,308,126,157,79
+    ICON            "",IDC_HOSTS_ICO,4,6,20,20
+    LTEXT           "Hosts",IDC_HOST_TEXT,20,7,75,9
+    EDITTEXT        IDC_HOSTWEBCACHEURL,317,92,131,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "Update",IDC_UPDATEHOSTWEBCACHEFROMURL,396,108,62,13,
+                    BS_FLAT | WS_DISABLED
+    PUSHBUTTON      "v",IDC_DD2,448,92,10,12,BS_FLAT | WS_DISABLED
+    LTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_LEFT_2,
+                    313,151,53,8
+    LTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_LEFT_3,
+                    313,163,53,8
+    LTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_LEFT_4,
+                    313,176,53,8
+    LTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_LEFT_5,
+                    313,189,53,8
+    RTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_RIGHT_1,
+                    390,139,69,8
+    RTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_RIGHT_2,
+                    390,152,69,8
+    RTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_RIGHT_3,
+                    390,164,69,8
+    RTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_RIGHT_4,
+                    390,177,69,8
+    RTEXT           "Status Text...",IDC_STATIC_IN_OUT_STATS_LABEL_RIGHT_5,
+                    390,190,69,8
+END
+
+IDD_TIMED_DLG DIALOGEX 0, 0, 281, 57
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    7,41,267,14
+    LTEXT           "Static",IDC_STATIC_TIMEDLG_TEXT,7,1,242,34
+    ICON            IDI_MUTE_ICON,IDC_STATIC,253,1,21,20
+END
+
+IDD_MUTE_WEB_DLG DIALOGEX 0, 0, 392, 230
+STYLE WS_CHILD | WS_BORDER
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_EXPLORER1,"{8856F961-340A-11D0-A96B-00C04FD705A2}",
+                    WS_TABSTOP,7,7,378,186
+    PUSHBUTTON      " <<     Back",IDC_BUTTON_BACK,7,197,185,29,BS_ICON | 
+                    BS_CENTER | BS_TOP
+    PUSHBUTTON      "Forward >>",IDC_BUTTON_NEXT,205,197,180,29,BS_ICON | 
+                    BS_CENTER | BS_TOP
+END
+
+IDD_MUTE_OPTIONS_DLG DIALOGEX 0, 0, 438, 242
+STYLE DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_OPTIONS_TREE,"SysTreeView32",WS_TABSTOP,7,7,81,
+                    234,WS_EX_CLIENTEDGE
+END
+
+IDD_MUTE_ABOUT_DLG DIALOGEX 0, 0, 453, 210
+STYLE DS_FIXEDSYS | WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "http://www.sourceforge.net/projects/mfc-mute-net",
+                    IDC_STATIC_MUTE_HOME,11,159,213,8
+    LTEXT           "http://www.planetpeer.de",IDC_STATIC_PLANETPEER_HOME,11,
+                    170,155,8
+    GROUPBOX        "Web Resources",IDC_STATIC_WEBLINK_GROUP,7,150,432,46
+    LTEXT           "http://xybaron.altervista.org/",IDC_STATIC_XYBARON_HOME,
+                    232,159,154,8
+    LTEXT           "http://sourceforge.net/projects/mute-net/",
+                    IDC_STATIC_MUTE_SF_MAIN_HOME,232,170,166,8
+    LTEXT           "Credits",IDC_CREDITS_CTRL,56,11,319,133
+    LTEXT           "http://mymute.info",IDC_STATIC_MYMUTEINFO_HOME,11,181,
+                    155,8
+END
+
+IDD_MUTE_SETTINGS_DLG DIALOGEX 0, 0, 413, 207
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_INBOUND_LIMIT_STRING_EDIT,95,19,30,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTBOUND_LIMIT_STRING_EDIT,95,37,30,15,
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_INITIAL_DL_TO_STRING_EDIT,350,20,44,15,
+                    ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_DELETE_CANCELED,350,38,44,46,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MAINTAIN_STRING_EDIT,95,71,31,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ALLOW_STRING_EDIT,95,89,31,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_UPLOADS_EDIT,366,73,23,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_UPLOADS_PER_VIP_EDIT,366,91,23,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SHARE_STRING_EDIT,100,114,240,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_BROWSE_SHARED_BUTTON,344,114,51,13,
+                    BS_FLAT
+    EDITTEXT        IDC_INCOMING_FOLDER_STRING_EDIT,100,131,239,13,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "B&rowse...",IDC_INCOMING_BROWSE_BUTTON,344,132,51,13,
+                    BS_FLAT
+    EDITTEXT        IDC_HASH_FOLDER_STRING_EDIT,100,150,239,13,
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Br&owse...",IDC_HASH_BROWSE_BUTTON,344,150,51,13,
+                    BS_FLAT
+    COMBOBOX        IDC_COMBO_LANGUAGE,16,183,83,64,CBS_DROPDOWN | 
+                    CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_PORT_STRING_EDIT,142,183,75,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Save Settings",IDC_SAVE_SETTINGS_BUTTON,315,173,79,27,
+                    BS_FLAT
+    LTEXT           "Inbound Limit:",IDC_STATIC_INBOUND_LABEL,13,14,78,22,
+                    SS_CENTERIMAGE
+    LTEXT           "msg/sec ( -1 == NO LIMIT )",
+                    IDC_STATIC_INBOUND_UNITS_LABEL,128,19,107,16,
+                    SS_CENTERIMAGE
+    LTEXT           "Outbound Limit:",IDC_STATIC_OUTBOUND_LABEL,13,37,80,16,
+                    SS_CENTERIMAGE
+    LTEXT           "msg/sec ( -1 == NO LIMIT )",
+                    IDC_STATIC_OUTBOUND_UNITS_LABEL,128,37,107,16,
+                    SS_CENTERIMAGE
+    LTEXT           "Initial D/L Timeout (secs):",
+                    IDC_STATIC_INITIAL_DL_TO_LABEL,247,20,98,16,
+                    SS_CENTERIMAGE
+    LTEXT           "Maintain at least:",IDC_STATIC_MAINTAIN_LABEL,13,71,80,
+                    16,SS_CENTERIMAGE
+    LTEXT           "neighbor connections",IDC_STATIC_NEIGHBORS_LABEL,133,71,
+                    125,16,SS_CENTERIMAGE
+    LTEXT           "Allow at most:",IDC_STATIC_ALLOW_LABEL,13,89,79,16,
+                    SS_CENTERIMAGE
+    LTEXT           "neighbor connections",IDC_STATIC_NEIGHBORS_LABEL_2,133,
+                    89,125,16,SS_CENTERIMAGE
+    LTEXT           "Share files from:",IDC_STATIC_SHARE_LABEL,9,114,82,13,
+                    SS_CENTERIMAGE
+    LTEXT           "Delete Canceled D/Ls:",IDC_STATIC_DELETECANCELED_LABEL,
+                    247,37,99,16,SS_CENTERIMAGE
+    LTEXT           "Maximum Uploads:",IDC_STATIC_MAX_UPLOADS,273,73,91,16,
+                    SS_CENTERIMAGE
+    LTEXT           "Maximum Uploads Per VIP:",
+                    IDC_STATIC_MAX_UPLOADS_PER_VIP,273,91,89,16,
+                    SS_CENTERIMAGE
+    GROUPBOX        "Download Settings",IDC_STATIC_DL_GROUP,242,7,161,50
+    GROUPBOX        "Message Limits Settings",IDC_STATIC_MSG_LIMITS_GROUP,7,
+                    7,232,50
+    GROUPBOX        "Connection Settings",IDC_STATIC_CONNECTIONS_GROUP,7,59,
+                    253,50
+    GROUPBOX        "Upload Controls Settings",IDC_STATIC_UL_GROUP,264,59,
+                    139,50
+    LTEXT           "Incoming D/Ls folder:",IDC_STATIC_INCOMING_LABEL,9,131,
+                    82,13,SS_CENTERIMAGE
+    LTEXT           "Hash files folder:",IDC_STATIC_HASH_LABEL,9,152,82,13,
+                    SS_CENTERIMAGE
+    GROUPBOX        "Language Settings",IDC_STATIC_LANGUAGE_GROUP,7,171,106,
+                    28
+    GROUPBOX        "Port",IDC_STATIC_PORT_GROUP,131,171,95,28
+END
+
+IDD_MUTE_SHARED_FILES_DLG DIALOGEX 0, 0, 393, 167
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_SHARED_FILES_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | LVS_OWNERDRAWFIXED | WS_BORDER | 
+                    WS_TABSTOP,4,17,385,124
+    PUSHBUTTON      "&Refresh",IDC_REFRESH_BUTTON,108,144,64,23,BS_MULTILINE | 
+                    BS_FLAT
+    PUSHBUTTON      "&Export List",IDC_EXPORT_SHARED_FILES_LIST_BUTTON,218,
+                    144,64,23,BS_MULTILINE | BS_FLAT
+    ICON            "",IDC_FILES_ICO,6,6,20,20
+    LTEXT           "Shared Files",IDC_SHARED_FILES_STATIC,19,7,103,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,7,0
+ PRODUCTVERSION 0,0,7,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://www.sourceforge.net/projects/mfc-mute-net  http://www.planetpeer.de\0"
+            VALUE "CompanyName", "http://www.sourceforge.net/projects/mfc-mute-net  http://mute-net.sourceforge.net\0"
+            VALUE "FileDescription", "MFC MUTE Anonymous P2P Application 0.0.7\0"
+            VALUE "FileVersion", "0, 0, 7, 0\0"
+            VALUE "InternalName", "MFC MUTE\0"
+            VALUE "LegalCopyright", "Copyright (C) 2004,2005 JROC 10-12-2005\0"
+            VALUE "LegalTrademarks", "OPEN SOURCE FREE just don't sell for profit!\0"
+            VALUE "ProductName", "MFC MUTE Anonymous P2P\0"
+            VALUE "ProductVersion", "0, 0, 7, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_MUTEMFC2_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 524
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 268
+    END
+
+    IDD_RANDOM_SEED_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_KEY_LENGTH_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 137
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_GENERATE_KEY_PAIR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 109
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_MUTE_SEARCH_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 434
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 145
+    END
+
+    IDD_MUTE_DOWNLOADS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 471
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_MUTE_UPLOADS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 389
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_MUTE_CONNECTIONS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 468
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_TIMED_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 274
+    END
+
+    IDD_MUTE_WEB_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 385
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 226
+    END
+
+    IDD_MUTE_OPTIONS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 241
+    END
+
+    IDD_MUTE_ABOUT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 439
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_MUTE_SETTINGS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 410
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_MUTE_SHARED_FILES_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 137
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND_CURSOR         CURSOR  DISCARDABLE     "res\\H_point.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIF
+//
+
+IDR_SLIDERBAR_GIF       GIF     MOVEABLE PURE   "res\\slidbara.gif"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MUTE_WEB_DLG DLGINIT
+BEGIN
+    IDC_EXPLORER1, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x3a9a, 0x0000, 0x1f36, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+//#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MFC_MUTE_GUI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,72 @@
+#
+# Modification History
+#
+# 2003-September-8    Jason Rohrer
+# Created.
+#
+# 2003-September-9    Jason Rohrer
+# Fixed clean target.
+#
+
+
+##
+# The portion of MUTE text-based-UI  Makefiles common to all 
+# platforms.
+# Should not be made manually---used by MUTE/configure to build Makefiles.
+##
+
+
+
+
+ROOT_PATH = ../../..
+
+
+
+
+LAYER_SOURCE = \
+ textMUTE.cpp 
+
+LAYER_OBJECTS = ${LAYER_SOURCE:.cpp=.o}
+
+NEEDED_MINOR_GEMS_OBJECTS = 
+
+CRYPTO_LIB = ${ROOT_PATH}/MUTE/crypto/libcrypto.a
+ROUTING_LIB = ${ROOT_PATH}/MUTE/layers/messageRouting/libmuteMessageRouter.a
+POINT_TO_POINT_LIB = ${ROOT_PATH}/MUTE/layers/pointToPoint/libmutePointToPoint.a
+FILE_TRANSFER_LIB = ${ROOT_PATH}/MUTE/layers/fileTransfer/libmuteFileTransfer.a
+FILE_TRANSFER_WEB_SERVER_LIB = ${ROOT_PATH}/MUTE/userInterface/fileTransferWebInterface/libmuteFileTransferWebServer.a
+
+
+
+TEST_SOURCE = 
+TEST_OBJECTS = ${TEST_SOURCE:.cpp=.o}
+
+
+
+DEPENDENCY_FILE = Makefile.dependencies
+
+
+# targets
+
+all: textMUTE
+clean:
+	rm -f ${DEPENDENCY_FILE} ${LAYER_OBJECTS} ${TEST_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} textMUTE
+
+
+
+
+textMUTE: ${LAYER_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS}
+	${EXE_LINK} -o textMUTE ${LAYER_OBJECTS} ${FILE_TRANSFER_WEB_SERVER_LIB} ${FILE_TRANSFER_LIB} ${POINT_TO_POINT_LIB} ${ROUTING_LIB} ${CRYPTO_LIB} ${PLATFORM_LINK_FLAGS}
+
+
+
+
+# build the dependency file
+${DEPENDENCY_FILE}: ${LAYER_SOURCE} ${TEST_SOURCE}
+	rm -f ${DEPENDENCY_FILE}
+	${COMPILE} -I${ROOT_PATH} -MM ${LAYER_SOURCE} ${TEST_SOURCE} >> ${DEPENDENCY_FILE}
+
+
+include ${DEPENDENCY_FILE}
+
+

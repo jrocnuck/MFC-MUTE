@@ -1,0 +1,183 @@
+This document describes the file sharing messaging protocol built on top
+of the MUTE message routing layer.  All messages described here are packaged
+into the Body portion of a MUTE message (see MUTE/doc/messageFormat.txt).  
+The required headers and encryption for MUTE messages are not shown here.
+
+
+All fields in these messages are whitespace-delimited.
+
+
+
+Search request message:
+
+Sent through the network to search for files.
+
+MessageType: SearchRequest
+SearchID:  <a unique string to identify this search>
+SearchString: <a URL-safe encoded search string>
+
+
+Example: (a search for "test mp3")
+
+
+MessageType: SearchRequest
+SearchID: 567B16E64A54ECEB1848A6A281F28D921B69EBD4
+SearchString: test%20mp3
+
+
+Search requests should be sent out with a MUTE To: address of "ALL" for
+a broadcast, or with a specific virtual address to search only one node.
+
+
+A search string of the form:
+hash_A54ECEB184A281F28D921B69EBD48A6567B16E64
+
+is interpreted as a hash-only search by each node that receives the request.
+Results are returned for each file that has a hash matching the specified
+hash.  
+
+
+
+
+Search result message:
+
+Returns results in response to a search.
+
+MessageType: SearchResults
+SearchID: <a unique string to identify the corresponding search>
+ResultCount: <the number of results returned in this message>
+Results: <a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory> <file size in bytes> <SHA1 file hash, 
+           hex-encoded>                               
+<a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory> <file size in bytes> <SHA1 file hash, 
+           hex-encoded>
+<a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory> <file size in bytes> <SHA1 file hash, 
+           hex-encoded>
+...
+
+If the hits cannot fit in the 32 KiB body of a MUTE message, they should
+be split across multiple SearchResults messages.
+
+Example:
+
+MessageType: SearchResults
+SearchID: 567B16E64A54ECEB1848A6A281F28D921B69EBD4
+ResultCount: 5
+Results: test.mp3 5000123 A54ECEB184A281F28D921B69EBD48A6567B16E64
+test2.mp3 498733 64A5567B16E4E21B69EBD4CEB1848AF28D96A281
+my%20test.mp3 20949 16E64567BA54ECE281F28D921B69EBD4B1848A6A
+test3.mp3 10398444 1848A6A521B69EBD467B16E64A54ECEB281F28D9
+test4.mp3 113254 64A54ECEB1848A6A567B16EBD4281F28D921B69E
+
+
+
+
+
+
+File information retrieval message:
+
+Used to request information about a file.
+
+MessageType: FileInfoRequest
+FilePath: <a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory>
+
+
+ Example: (a request for info about myMusic/temp/test.mp3)
+
+
+
+MessageType: FileInfoRequest
+FilePath: myMusic%2Ftemp%2Ftest.mp3
+
+
+
+File information message:
+
+Sent in response to a FileInfoRequest
+
+MessageType: FileInfo
+FilePath: <a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory>
+FileStatus: <either Found or NotFound>
+FileSize: <size in bytes>
+ChunkCount: <number of 30-KiB chunks>
+MimeType: <mime type>
+
+
+If FileStatus is NotFound, the remaining headers (FileSize, ChunkCount, and
+MimeType) are ommitted.
+
+
+Example:
+
+MessageType: FileInfo
+FilePath: myMusic%2Ftemp%2Ftest.mp3
+FileStatus: Found
+FileSize: 1392884
+ChunkCount: 62
+MimeType: audio/mpeg
+
+
+Example:
+
+MessageType: FileInfo
+FilePath: myMusic%2Ftemp%2Ftest2.mp3
+FileStatus: NotFound
+
+
+Since the payload size (body) of a MUTE routed message is limited to 32 KiB,
+and that body contains the headers describing a chunk, we use 22 KiB for each 
+file chunk (less than 30 KiB when base64 encoded).
+2 KiB should be enough room for the file chunk headers.
+
+The chunk size is actually controlled by the the file host and thus can vary.
+Whatever the chunk size, the 32-KiB payload limit must be observed.
+
+
+
+
+
+
+File chunk retrieval message:
+
+Requests a chunk of file.
+
+MessageType: FileChunkRequest
+FilePath: <a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory>
+ChunkNumber:  <the chunk index, where 0 indicates the first chunk>
+
+
+Example:
+
+MessageType: FileChunkRequest
+FilePath: myMusic%2Ftemp%2Ftest.mp3
+ChunkNumber: 5
+
+
+
+File chunk message:
+
+Returns a chunk of a file.
+
+MessageType: FileChunk
+FilePath: <a URL-safe encoded, "/"-delimited file path, relative to the file 
+           host's root file directory>
+ChunkNumber: <the chunk index, where 0 indicates the first chunk>
+ChunkLength: <unencoded chunk data length in bytes>
+ChunkData: <contiguous (no line breaks) base64-encoded chunk data>
+
+
+Example:
+
+MessageType: FileChunk
+FilePath: myMusic%2Ftemp%2Ftest.mp3
+ChunkNumber: 61
+ChunkLength: 18676
+ChunkData: AjKiEoQEYqIyQmJCh.....
+
+
+

@@ -1,0 +1,44 @@
+The following would be good additions to the initial MFC release of the MUTE
+project.  There are a lot of people out there who could coordinate a lot of this
+and get this done relatively quickly... here's my initial thoughts:
+
+
+
+DONE 1. About box with links to sourceforge MUTE page.
+2. Internal version checking on start option to check for new updates.
+3. Searching within search list for words.
+DONE....4. Ability to remove Uploads from uploads list.
+5. Ability to kill connections from the GUI
+DONE....6. Another minimize button that puts the program on the tray icon bar.
+7. Search window that doesn't allow searches when no connections exist.
+8. Automatic Search stopping after timeout.
+9. On start, don't ask user for random characters... come up with auto generated randomness.
+DONE 10. Version info within view for the user from the gui.. ie. title bar/about screen etc...
+11. Hash calculator tool.
+12. Shared file tab to show shared files and associated hashes.
+13. Schedule actions screen that allows shutdown of app, clearing of lists, shutting down of
+PC, etc. etc...
+KIND OF DONE 14. This one's more for the underlying app: allow for setting up separate inbound and outbound sharing directories.
+15. Statistics screen that keeps up with all kinds of stuff... (see Emule..)
+DONE....16. Button (wisely placed) to automatically bring up shared dir...
+17. On settings screen, allow users to dynamically select the default text colors for various
+file extensions in the list controls.. etc.. 
+18. Allow for more color settings overall on the settings screen.
+DONE....19. Selective searches... i.e. based on size or something.. or filters for extensions....
+20. Control of logging level from settings screen
+DONE....delete all incoming..21. Buttons to delete files out of incoming directory when they are no longer valid.
+22. Button to change current "virtual address"
+23. Built in "firewall" to close connections based on ip addresses.... with importable redlist of ip addresses from various other programs like peerguardian and the likes..
+DONE....24. option to close even with unfinished downloads
+DONE....(see #19)25. "unwanted content" search filtering ability.
+26. provide tooltip hyperlinks with top 3 google searches of file name..for quick web references..
+DONE.. for ANSI char set - 27. Somebody could add all the text references to the resources and use LOCALE info to get the language.. 
+	then allow for users to switch languages for the gui.... This would require adding String resources
+	for all the controls and updating the control's text at startup
+28. A separate screen that shows all of the text searches that are going through the client.
+29. From TSAFA -- ability to search for more files from a given VIRTUAL ADDRESS.. basically a way
+	to request a list of files from a VIRTUAL ADDRESS.. .this would be cool, but the anonymity
+	issues need to be explored before adding this functionality to the MUTE communication protocol.
+30. Code in Registry to remember window placement settings and user column heading locations, etc... maybe even ability  
+    to turn off columns that are not wanted.
+

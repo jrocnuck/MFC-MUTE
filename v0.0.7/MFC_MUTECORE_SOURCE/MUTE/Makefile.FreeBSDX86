@@ -1,0 +1,41 @@
+#
+# Modification History
+#
+# 2002-September-9    Jason Rohrer
+# Created.
+#
+# 2003-November-2   Jason Rohrer
+# Moved minorGems platform prefixes into platform-specific Makefile templates.
+#
+
+
+##
+# The common FreeBSD portion of Makefiles.
+# Should not be made manually---used by configure to build Makefiles.
+##
+
+
+PLATFORM_COMPILE_FLAGS = -DBSD
+
+# pthread library linked differently for BSD
+PLATFORM_LINK_FLAGS = -pthread
+
+
+# All platforms but OSX support g++ and need no linker hacks
+GXX=g++ 
+LINK_FLAGS = 
+
+
+
+##
+# Platform-specific minorGems file path prefixes
+##
+
+PLATFORM = Linux
+PLATFORM_PATH = linux
+
+TIME_PLATFORM = Unix
+TIME_PLATFORM_PATH = unix
+
+DIRECTORY_PLATFORM = Unix
+DIRECTORY_PLATFORM_PATH = unix

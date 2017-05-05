@@ -1,0 +1,70 @@
+#!/bin/sh
+
+#
+# Modification History
+#
+# 2003-November-16   Jason Rohrer
+# Copied from k2b kast build.
+#
+# 2004-January-20   Jason Rohrer
+# Changed to use common settings folder.
+#
+# 2004-February-29   Jason Rohrer
+# Added settings readme.
+#
+
+
+if [ $# -lt 2 ] ; then
+   echo "Usage: $0 release_name unix_platform_name"
+   exit 1
+fi
+
+
+rm -rf unix
+rm -rf windows
+
+mkdir windows
+mkdir unix
+
+
+# work on unix tree first
+mkdir unix/MUTE
+mkdir unix/MUTE/settings
+
+cp ../../settings/*.ini ../../settings/README.txt unix/MUTE/settings
+
+mkdir unix/MUTE/files
+
+
+
+# duplicate unix tree so far to make windows tree
+cp -r unix/MUTE windows/
+
+cp ../fileSharingMUTE unix/MUTE/
+
+cp win32/fileSharingMUTE.exe win32/*.dll windows/MUTE/
+
+cd unix
+tar cf "MUTE_$1_$2.tar" MUTE
+gzip "MUTE_$1_$2.tar"
+
+
+# compile unix2dos
+cd ..
+g++ -o unix2dos unix2dos.c 
+cp unix2dos windows
+cp unix2dosScript windows
+
+
+cd windows
+for file in MUTE/settings/*.ini
+do
+    ./unix2dosScript "$file"
+done
+
+zip -r "MUTE_$1_Windows.zip" MUTE
+
+
+
+
+

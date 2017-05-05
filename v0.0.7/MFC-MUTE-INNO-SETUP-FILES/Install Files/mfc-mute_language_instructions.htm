@@ -1,0 +1,2007 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>MFC-MUTE (0.0.7) language files support</title>
+</head>
+
+<body>
+
+<div align="justify">
+  <table border="0" cellpadding="0" cellspacing="0" width="94%">
+    <tr>
+      <td width="100%">
+        <p align="center"><b><u><font size="6">MFC-MUTE (0.0.7) language files support</font></u></b>
+        <p align="center">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div align="left">
+  <table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+      <td width="31%"><b><font size="3"><a href="#MFC-MUTE LANGUAGE FEATURES">MFC-MUTE LANGUAGE FEATURES</a></font></b></td>
+    </tr>
+    <tr>
+      <td width="31%"><b><font size="3"><a href="#HOW TO ADD A NEW LANGUAGE SUPPORT ?"> HOW TO ADD A NEW LANGUAGE
+        SUPPORT ?</a></font></b></td>
+    </tr>
+    <tr>
+      <td width="31%"><b><font size="3"><a href="#MFC-MUTE STRINGS LIST">MFC-MUTE
+        STRINGS LIST</a></font></b></td>
+    </tr>
+    <tr>
+      <td width="31%"><font size="3"><a href="#Sample language file">Sample
+        language file</a></font></td>
+    </tr>
+  </table>
+</div>
+<div align="justify">
+  <table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+      <td width="80%">
+        <hr>
+      </td>
+    </tr>
+    <tr>
+      <td width="80%" align="center">
+        <p align="left"><font size="4"><b><a name="MFC-MUTE LANGUAGE FEATURES">MFC-MUTE LANGUAGE FEATURES</a></b></font></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="80%" valign="top">&nbsp;
+        <p>MFC-MUTE&nbsp; comes with 7 embedded
+        languages&nbsp;:&nbsp; English&nbsp;
+        - German
+        - Italian
+        - French - Spanish - Danish - Lithuanian.</p>
+        <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="80%" valign="top">Additional&nbsp; languages
+        (provided that they are compatible with the ANSI character set) are supported&nbsp;
+        through external language files.</td>
+    </tr>
+    <tr>
+      <td width="80%" valign="top">At start-up MFC-MUTE automatically
+        searches&nbsp; for
+        additional language files in its settings folder. Any file whose name
+        ends with a <span style="background-color: #FFFFFF">
+        .lng</span> extension is considered as a
+        language file.</td>
+    </tr>
+    <tr>
+      <td width="80%" valign="top">Every time a language file is found MFC-MUTE
+        tries to associate an icon with it. The icon must have
+        the same name as the language file (except the <span style="background-color: #FFFFFF"> .ico</span>
+        extension).</td>
+    </tr>
+    <tr>
+      <td width="80%" valign="top">When a language is selected MFC-MUTE
+        considers it as the new default language and automatically selects it at
+        the next start-up.
+        <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="80%" valign="top">
+        <hr>
+      </td>
+    </tr>
+  </table>
+</div>
+<div align="justify">
+  <table border="0" cellpadding="0" cellspacing="0" width="115%" height="853">
+    <tr>
+      <td width="50%" colspan="3" height="62">
+        <p align="left"><b><font size="4"><a name="HOW TO ADD A NEW LANGUAGE SUPPORT ?"> HOW TO ADD A NEW LANGUAGE
+        SUPPORT ?</a></font></b></p>
+        <p align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="40"><b>What do you need ?&nbsp;</b></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="59">A simple text editor is the only tool you
+        really need. You can also use the LTH (Little Translation Helper)
+        written by Markus Speckmeier.
+        <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="59"><b>What are the rules regarding
+        strings ?</b></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">You just need to keep in mind
+        these 3 points :</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">1 :&nbsp; <span style="background-color: #FFFFFF">&quot;</span> character is a
+        delimiter. Only strings found between&nbsp; inverted quotes are used by
+        MFC-MUTE. Two inverted quotes by line are the standard format.</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">2:&nbsp;&nbsp; Don't change the ordinal range of
+        strings in the language file.</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="59" valign="top">3:&nbsp;&nbsp; Write
+        only one language string by line</td>
+    </tr>
+    <tr>
+      <td width="32%" align="center" height="21">
+        <p align="center"><b>Examples of correct syntax :</b></td>
+      <td width="21%" align="left" height="21"></td>
+      <td width="30%" align="center" height="21"></td>
+    </tr>
+    <tr>
+      <td width="19%" align="left" height="21" bgcolor="#FFFFFF"><b>&quot;<i>string</i>&quot;</b></td>
+    </tr>
+    <tr>
+      <td width="19%" align="left" height="21" bgcolor="#FFFFFF"><b>1 &quot;<i>string</i>&quot;</b></td>
+    </tr>
+    <tr>
+      <td width="19%" align="left" height="21" bgcolor="#FFFFFF"><b>string
+        &quot;<i>string</i>&quot;</b></td>
+    </tr>
+    <tr>
+      <td width="19%" align="left" height="21" bgcolor="#FFFFFF"><b>IDS_STRING
+        &quot;<i>string</i>&quot;</b></td>
+    </tr>
+    <tr>
+      <td width="19%" height="27" valign="top" bgcolor="#FFFFFF" align="left"><b><i>&quot;string1&quot;
+        &quot;string2&quot;&nbsp; (*)</i></b></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21"></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">(*)&nbsp; 4 <span style="background-color: #FFFFFF"> &quot;</span>delimiters are
+        supported too but only <i>string2</i> will be considered as a language
+        string by MFC-MUTE.</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21"><b>Comments and blank lines : </b>You
+        can add comments and blank lines provided you don't use extra <span style="background-color: #FFFFFF"> &quot;</span>
+        delimiter characters.<b>&nbsp; </b></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21"><b>Escape sequences :&nbsp; </b>You
+        can use<span style="background-color: #FFFFFF"><b> </b>\n</span> &amp;<span style="background-color: #FFFFFF"> \r</span> .
+        <span style="background-color: #FFFFFF"> \&quot;</span> is not supported&nbsp; </td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="59"><b>You have completed the
+        translation ?</b></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">Bravo ! Just save your work in a
+        file and copy it in the MFC-MUTE settings
+        folder. <u>The filename extension must be<span style="background-color: #FFFFFF">
+        .lng</span></u></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">Please note that the name of your
+        file (without the extension)&nbsp; will be considered as being&nbsp; the
+        name of the language you are adding.&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="32%" height="59">
+        <p align="center">&nbsp;Example : <i><b>\ ...\MFC-MUTE\settings\spanish.lng
+        </b></i></td>
+      <td width="21%" height="59">&nbsp;appears as <span style="background-color: #FFFFFF">spanish</span>
+        in the language combo</td>
+      <td width="30%" height="59">&nbsp;
+        <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="59"><b>Ok. You want an icon too !</b></td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">No problem. Copy the icon of your
+        choice it in the MFC-MUTE settings folder and give it the same name as
+        the associated language. </td>
+    </tr>
+    <tr>
+      <td width="32%" height="59">
+        <p align="center">&nbsp;Example : <b>\ ...\MFC-MUTE\settings\spanish.ico</b></td>
+      <td width="21%" height="59">&nbsp;</td>
+      <td width="30%" height="59">&nbsp;
+        <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="50%" colspan="3" height="21">
+        <hr>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+<div align="justify">
+  <table border="0" cellpadding="0" cellspacing="0" width="95%">
+    <tr>
+      <td width="100%"><font size="4"><b><a name="MFC-MUTE STRINGS LIST">MFC-MUTE
+        STRINGS LIST</a></b></font></td>
+    </tr>
+    <tr>
+      <td width="100%">The following array lists all the strings used by MFC-MUTE<p>&nbsp;Index - Resource identifiers and strings
+        only&nbsp;figure here to
+        help you. You don't need to copy them.&nbsp; The only thing you must
+        take into account&nbsp; is to follow the same order in your own language file </td>
+    </tr>
+  </table>
+</div>
+<table style="table-layout: fixed; border-collapse: collapse" cellSpacing="0" cellPadding="0" width="1093" border="3" x:str>
+  <tbody>
+    <tr class="xl26" style="HEIGHT: 12.75pt" height="17">
+      <td class="xl26" style="height: 12.75pt" width="40" height="17">Index</td>
+      <td class="xl26" width="500" x:str="Resource identifier ">Resource identifier</td>
+      <td class="xl26" width="582">String</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num width="74">1</td>
+      <td width="425"><a name="default">IDS_SEARCH_NORESULT_ENG</a></td>
+      <td width="582">No matching entry found.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A2+1" width="74">2</td>
+      <td width="425">IDS_GEN_KEY_PAIR_WINDOW_TITLE_ENG</td>
+      <td width="582">First Startup</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A3+1" width="74">3</td>
+      <td width="425">IDS_GEN_KEY_PAIR_WINDOW_MAIN_TEXT_ENG</td>
+      <td width="582">Generating a key pair.\nThis may take a while.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A4+1" width="74">4</td>
+      <td width="425">IDS_KEY_LENGTH_WINDOW_TITLE_ENG</td>
+      <td width="582">First Startup</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A5+1" width="74">5</td>
+      <td width="425">IDS_KEY_LENGTH_WINDOW_MAIN_TEXT_ENG</td>
+      <td width="582">Key generation\nSelect a key size</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A6+1" width="74">6</td>
+      <td width="425">IDS_CONNECTIONS_TAB_ADDRESS_TEXT_ENG</td>
+      <td width="582">Address:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A7+1" width="74">7</td>
+      <td width="425">IDS_CONNECTIONS_TAB_PORT_TEXT_ENG</td>
+      <td width="582">Port:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A8+1" width="74">8</td>
+      <td width="425">IDS_CONNECTIONS_TAB_ADDHOST_BTN_TEXT_ENG</td>
+      <td width="582">&amp;Add Host</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A9+1" width="74">9</td>
+      <td width="425">IDS_CONNECTIONS_TAB_STARTUP_ENG</td>
+      <td width="582">Starting Up.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A10+1" width="74">10</td>
+      <td width="425">IDS_DLOADS_TAB_PURGE_INCOMING_ENG</td>
+      <td width="582">&amp;Purge Incoming Folder</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A11+1" width="74">11</td>
+      <td width="425">IDS_DLOADS_TAB_EXPLORE_INCOMING_ENG</td>
+      <td width="582">E&amp;xplore Incoming Files</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A12+1" width="74">12</td>
+      <td width="425">IDS_DLOADS_TAB_EXPLORE_SHARED_ENG</td>
+      <td width="582">&amp;Explore Shared Files</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A13+1" width="74">13</td>
+      <td width="425">IDS_DLOADS_TAB_CLEAR_COMPLETE_ENG</td>
+      <td width="582">Clear Co&amp;mpleted Download(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A14+1" width="74">14</td>
+      <td width="425">IDS_DLOADS_TAB_CLEAR_FAILED_ENG</td>
+      <td width="582">&amp;Clear Stalled/Failed Download(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A15+1" width="74">15</td>
+      <td width="425">IDS_DLOADS_TAB_CANCEL_ENG</td>
+      <td width="582">Ca&amp;ncel/Clear Selected Download(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A16+1" width="74">16</td>
+      <td width="425">IDS_TAB_TITLE_SEARCH_TEXT_ENG</td>
+      <td x:str=" Search " width="582"><span style="mso-spacerun: yes">&nbsp;</span>Search</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A17+1" width="74">17</td>
+      <td width="425">IDS_TAB_TITLE_DLOAD_TEXT_ENG</td>
+      <td x:str=" Downloads " width="582"><span style="mso-spacerun: yes">&nbsp;</span>Downloads</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A18+1" width="74">18</td>
+      <td width="425">IDS_TAB_TITLE_ULOAD_TEXT_ENG</td>
+      <td x:str=" Uploads " width="582"><span style="mso-spacerun: yes">&nbsp;</span>Uploads</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A19+1" width="74">19</td>
+      <td width="425">IDS_TAB_TITLE_CONNECTIONS_TEXT_ENG</td>
+      <td x:str=" Connections " width="582"><span style="mso-spacerun: yes">&nbsp;</span>Connections</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A20+1" width="74">20</td>
+      <td width="425">IDS_TAB_TITLE_SETTINGS_TEXT_ENG</td>
+      <td x:str=" Settings " width="582"><span style="mso-spacerun: yes">&nbsp;</span>Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A21+1" width="74">21</td>
+      <td width="425">IDS_TASK_TRAY_MENU_RESTORE_ENG</td>
+      <td width="582">&amp;Restore</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A22+1" width="74">22</td>
+      <td width="425">IDS_TASK_TRAY_MENU_QUIT_ENG</td>
+      <td width="582">&amp;Quit</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A23+1" width="74">23</td>
+      <td width="425">IDS_TRYING_TO_CONNECT_ENG</td>
+      <td width="582">Trying to connect to %s : %d</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A24+1" width="74">24</td>
+      <td width="425">IDS_BEHIND_FIREWALL_POPUP_CAPTION_ENG</td>
+      <td width="582">First Startup</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A25+1" width="74">25</td>
+      <td width="425">IDS_BEHIND_FIREWALL_QUESTION_ENG</td>
+      <td style="mso-ignore: colspan" width="582">Are you behind a firewall that
+        might\r\nblock inbound connections to MUTE?\r\n(If unsure, click Yes.)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A26+1" width="74">26</td>
+      <td width="425">IDS_TRACE_STOPPING_FILE_SHARING_LAYER_ENG</td>
+      <td width="582">Stopping file sharing layer\n</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A27+1" width="74">27</td>
+      <td width="425">IDS_TRACE_SAVING_RANDOMNESS_ENG</td>
+      <td width="582">Saving randomness for use at next startup\n</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A28+1" width="74">28</td>
+      <td width="425">IDS_TRACE_STOPPING_MSG_ROUTER_ENG</td>
+      <td width="582">Stopping message routing layer\n</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A29+1" width="74">29</td>
+      <td width="425">IDS_TRACE_ALL_LAYERS_STOPPED_ENG</td>
+      <td width="582">All layers are stopped, exiting.\n</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A30+1" width="74">30</td>
+      <td width="425">IDS_TOOLTIP_EXPLORE_SHARED_FILES_ENG</td>
+      <td width="582">Explore Shared Files Directory</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A31+1" width="74">31</td>
+      <td width="425">IDS_TOOLTIP_EXPLORE_INCOMING_FILES_ENG</td>
+      <td width="582">Explore Incoming Files Directory</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A32+1" width="74">32</td>
+      <td width="425">IDS_TOOLTIP_PURGE_INCOMING_FILES_ENG</td>
+      <td width="582">Purge Incoming Files Directory</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A33+1" width="74">33</td>
+      <td width="425">IDS_DLOAD_FAILED_ENG</td>
+      <td width="582">Failed</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A34+1" width="74">34</td>
+      <td width="425">IDS_DLOAD_NOT_FOUND_ENG</td>
+      <td width="582">Not Found</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A35+1" width="74">35</td>
+      <td width="425">IDS_DLOAD_FILE_CORRUPTED_ENG</td>
+      <td width="582">File Corrupted</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A36+1" width="74">36</td>
+      <td width="425">IDS_DLOAD_CANCELLING_ENG</td>
+      <td width="582">Cancelling...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A37+1" width="74">37</td>
+      <td width="425">IDS_DLOAD_COMPLETE_ENG</td>
+      <td width="582">Complete</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A38+1" width="74">38</td>
+      <td width="425">IDS_DLOAD_ONE_HUNDRED_PERCENT_OF_ENG</td>
+      <td width="582">100% of</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A39+1" width="74">39</td>
+      <td width="425">IDS_DLOAD_ATTEMPTING_RESUME_ENG</td>
+      <td width="582">Attempting Resume...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A40+1" width="74">40</td>
+      <td width="425">IDS_SHARING_FOLDER_DOES_NOT_EXIST_ENG</td>
+      <td width="582">Sharing folder does not exist.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A41+1" width="74">41</td>
+      <td width="425">IDS_MUTE_ERROR_CAPTION_ENG</td>
+      <td width="582">Mute ERROR</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A42+1" width="74">42</td>
+      <td width="425">IDS_PURGE_INCOMING_CAPTION_ENG</td>
+      <td width="582">Purge unfinished downloads...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A43+1" width="74">43</td>
+      <td width="425">IDS_PURGE_INCOMING_QUESTION_ENG</td>
+      <td width="582">Are you sure you want to purge all unfinished downloads?</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A44+1" width="74">44</td>
+      <td width="425">IDS_PURGE_INCOMING_CAPTION_ERROR_ENG</td>
+      <td width="582">MUTE Purge Incoming Directory Error...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A45+1" width="74">45</td>
+      <td width="425">IDS_PURGE_INCOMING_ERROR_MSG_ENG</td>
+      <td width="582">Clear all downloads first!</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A46+1" width="74">46</td>
+      <td width="425">IDS_INCOMING_FOLDER_DOES_NOT_EXIST_ENG</td>
+      <td width="582">Incoming folder does not exist.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A47+1" width="74">47</td>
+      <td width="425">IDS_512BITS_ENG</td>
+      <td width="582">512 bits (weak, but fast)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A48+1" width="74">48</td>
+      <td width="425">IDS_1024BITS_ENG</td>
+      <td width="582">1024 bits (recommended)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A49+1" width="74">49</td>
+      <td width="425">IDS_1536BITS_ENG</td>
+      <td width="582">1536 bits (strong, but slow)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A50+1" width="74">50</td>
+      <td width="425">IDS_2048BITS_ENG</td>
+      <td width="582">2048 bits (very strong and very slow)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A51+1" width="74">51</td>
+      <td width="425">IDS_4096BITS_ENG</td>
+      <td width="582">4096 bits (probably overkill)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A52+1" width="74">52</td>
+      <td width="425">IDS_KEY_GENERATION_SELECT_SIZE_ENG</td>
+      <td width="582">Key generation\nSelect a key size</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A53+1" width="74">53</td>
+      <td width="425">IDS_KEY_GENERATION_DLG_CAPTION_ENG</td>
+      <td width="582">First Startup</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A54+1" width="74">54</td>
+      <td width="425">IDS_GATHERING_RANDOMNESS_CAPTION_ENG</td>
+      <td width="582">Gathering Randomness</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A55+1" width="74">55</td>
+      <td width="425">IDS_GATHERING_RANDOMNESS_TEXT_ENG</td>
+      <td width="582">Encryption Seed -- Enter Some Randomness:\n(More
+        Randomness =&gt; More Secure)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A56+1" width="74">56</td>
+      <td width="425">IDS_KEY_GENERATION_TIME_TEXT_ENG</td>
+      <td width="582">Key generation took\n%d seconds</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A57+1" width="74">57</td>
+      <td width="425">IDS_MUTE_CLOSE_MSG_CAPTION_ENG</td>
+      <td width="582">MUTE Quitting</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A58+1" width="74">58</td>
+      <td width="425">IDS_MUTE_CLOSE_MSG_TEXT_ENG</td>
+      <td style="mso-ignore: colspan" width="582">You have attempted to close
+        MUTE\nwhile downloads are still active.\nDo you wish to continue closing
+        MUTE?</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A59+1" width="74">59</td>
+      <td width="425">IDS_CONNECTIONS_COLHEADING_ADDRESS_ENG</td>
+      <td width="582">Address</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A60+1" width="74">60</td>
+      <td width="425">IDS_CONNECTIONS_COLHEADING_PORT_ENG</td>
+      <td width="582">Port</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A61+1" width="74">61</td>
+      <td width="425">IDS_CONNECTIONS_COLHEADING_SENT_ENG</td>
+      <td width="582">Sent</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A62+1" width="74">62</td>
+      <td width="425">IDS_CONNECTIONS_COLHEADING_QUEUED_ENG</td>
+      <td width="582">Queued</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A63+1" width="74">63</td>
+      <td width="425">IDS_CONNECTIONS_COLHEADING_DROPPED_ENG</td>
+      <td width="582">Dropped</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A64+1" width="74">64</td>
+      <td width="425">IDS_ADDHOST_ERROR_MSGBOX_CAPTION_ENG</td>
+      <td width="582">Mute Connections..</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A65+1" width="74">65</td>
+      <td width="425">IDS_ADDHOST_ERROR_MSGBOX_MSG_ENG</td>
+      <td width="582">Invalid ip address</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A66+1" width="74">66</td>
+      <td width="425">IDS_SEARCH_SEARCHING_STATUS_ENG</td>
+      <td width="582">Searching...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A67+1" width="74">67</td>
+      <td width="425">IDS_SEARCH_IDLE_STATUS_ENG</td>
+      <td width="582">Idle...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A68+1" width="74">68</td>
+      <td width="425">IDS_TOOLTIP_PURGE_HASH_FILES_ENG</td>
+      <td width="582">Purge Hash Files Directory</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A69+1" width="74">69</td>
+      <td width="425">IDS_ADDED_TO_DLOADS_PREFIX_ENG</td>
+      <td width="582">++added to downloads++</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A70+1" width="74">70</td>
+      <td width="425">IDS_EXPORT_SEARCH_DLG_CAPTION_ENG</td>
+      <td width="582">Export Search Results...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A71+1" width="74">71</td>
+      <td width="425">IDS_SEARCH_EXPORT_SEARCH_TEXT_TAG_ENG</td>
+      <td width="582">Search Text:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A72+1" width="74">72</td>
+      <td width="425">IDS_SEARCH_EXPORT_SEARCH_BOOLEAN_TAG_ENG</td>
+      <td width="582">Search Boolean:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A73+1" width="74">73</td>
+      <td width="425">IDS_SEARCH_BOOLEAN_AND_ENG</td>
+      <td width="582">AND</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A74+1" width="74">74</td>
+      <td width="425">IDS_SEARCH_BOOLEAN_OR_ENG</td>
+      <td width="582">OR</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A75+1" width="74">75</td>
+      <td width="425">IDS_SEARCH_BOOLEAN_ENTIRE_PHRASE_ENG</td>
+      <td width="582">ENTIRE PHRASE</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A76+1" width="74">76</td>
+      <td width="425">IDS_SEARCH_EXCLUDE_TEXT_ENG</td>
+      <td width="582">Search Exclude Text:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A77+1" width="74">77</td>
+      <td width="425">IDS_SEARCH_FILE_SIZE_LIMITS_ENG</td>
+      <td width="582">File Size Limits (KB):</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A78+1" width="74">78</td>
+      <td width="425">IDS_SEARCH_FILE_SIZE_BOOLEAN_ENG</td>
+      <td width="582">File Size Boolean:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A79+1" width="74">79</td>
+      <td width="425">IDS_SEARCH_BOOLEAN_ATLEAST_ENG</td>
+      <td width="582">AT LEAST</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A80+1" width="74">80</td>
+      <td width="425">IDS_SEARCH_BOOLEAN_ATMOST_ENG</td>
+      <td width="582">AT MOST</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A81+1" width="74">81</td>
+      <td width="425">IDS_SEARCH_EXPORT_FILE_COL_HEADINGS_ENG</td>
+      <td width="582">----FILE NAME---- , ----FILE SIZE---- , ----HASH---- ,
+        ----HOST VIRTUAL ADDRESS----</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A82+1" width="74">82</td>
+      <td width="425">IDS_PURGE_HASHES_MSGBOX_CAPTION_ENG</td>
+      <td width="582">Purge your MUTE hashes...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A83+1" width="74">83</td>
+      <td width="425">IDS_PURGE_HASHES_MSGBOX_TEXT_ENG</td>
+      <td width="582">Are you sure you want to purge your MUTE hashes?</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A84+1" width="74">84</td>
+      <td width="425">IDS_SEARCH_EXPORT_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Export Results</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A85+1" width="74">85</td>
+      <td width="425">IDS_SEARCH_DLOAD_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Download</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A86+1" width="74">86</td>
+      <td width="425">IDS_SEARCH_CLEARRESULTS_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Clear Results</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A87+1" width="74">87</td>
+      <td width="425">IDS_SEARCH_SEARCH_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Search</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A88+1" width="74">88</td>
+      <td width="425">IDS_SEARCH_STOP_BUTTON_TEXT_ENG</td>
+      <td width="582">S&amp;top</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A89+1" width="74">89</td>
+      <td width="425">IDS_SEARCH_PURGE_HASH_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Purge Hash Folder</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A90+1" width="74">90</td>
+      <td width="425">IDS_SEARCH_SEARCHFOR_TEXT_ENG</td>
+      <td width="582">Search for these strings (separate words by space):</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A91+1" width="74">91</td>
+      <td width="425">IDS_SEARCH_SEARCHEXCLUDE_TEXT_ENG</td>
+      <td width="582">Exclude these strings (separate words by space):</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A92+1" width="74">92</td>
+      <td width="425">IDS_COL_HEADING_FILENAME_ENG</td>
+      <td width="582">File Name</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A93+1" width="74">93</td>
+      <td width="425">IDS_COL_HEADING_FILETYPE_ENG</td>
+      <td width="582">File Type</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A94+1" width="74">94</td>
+      <td width="425">IDS_COL_HEADING_SIZE_ENG</td>
+      <td width="582">Size</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A95+1" width="74">95</td>
+      <td width="425">IDS_COL_HEADING_HASH_ENG</td>
+      <td width="582">Hash</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A96+1" width="74">96</td>
+      <td width="425">IDS_COL_HEADING_HOST_VIP_ENG</td>
+      <td width="582">Host Virtual Address</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A97+1" width="74">97</td>
+      <td width="425">IDS_SEARCH_RT_CLK_MENU_CAPTION_ENG</td>
+      <td width="582">MUTE SEARCH...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A98+1" width="74">98</td>
+      <td width="425">IDS_SEARCH_RT_CLK_MENU_DLOAD_ENG</td>
+      <td width="582">&amp;Download</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A99+1" width="74">99</td>
+      <td width="425">IDS_DLOAD_EXPLORE_SHARED_BUTTON_ENG</td>
+      <td width="582">&amp;Explore Shared Files</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A100+1" width="74">100</td>
+      <td width="425">IDS_DLOAD_EXPLORE_INCOMING_BUTTON_ENG</td>
+      <td width="582">E&amp;xplore Incoming Files</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A101+1" width="74">101</td>
+      <td width="425">IDS_DLOAD_PURGE_INCOMING_BUTTON_ENG</td>
+      <td width="582">&amp;Purge Incoming Folder</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A102+1" width="74">102</td>
+      <td width="425">IDS_DLOAD_CLEAR_COMPLETE_BUTTON_ENG</td>
+      <td width="582">Clear Co&amp;mpleted Download(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A103+1" width="74">103</td>
+      <td width="425">IDS_DLOAD_CLEAR_FAILED_BUTTON_ENG</td>
+      <td width="582">&amp;Clear Stalled/Failed Download(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A104+1" width="74">104</td>
+      <td width="425">IDS_DLOAD_CANCEL_BUTTON_ENG</td>
+      <td width="582">Ca&amp;ncel/Clear Selected Download(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A105+1" width="74">105</td>
+      <td width="425">IDS_COL_HEADING_STATUS_ENG</td>
+      <td width="582">Status</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A106+1" width="74">106</td>
+      <td width="425">IDS_COL_HEADING_NUMRESUMES_ENG</td>
+      <td width="582"># Resumes</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A107+1" width="74">107</td>
+      <td width="425">IDS_COL_HEADING_STARTTIME_ENG</td>
+      <td width="582">Start Time</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A108+1" width="74">108</td>
+      <td width="425">IDS_COL_HEADING_LASTUPDATETIME_ENG</td>
+      <td width="582">Last Status Update</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A109+1" width="74">109</td>
+      <td width="425">IDS_COL_HEADING_ROUTEQUALITY_ENG</td>
+      <td width="582">Route Quality</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A110+1" width="74">110</td>
+      <td width="425">IDS_DLOAD_RT_CLK_MENU_CAPTION_ENG</td>
+      <td width="582">MUTE DOWNLOADS...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A111+1" width="74">111</td>
+      <td width="425">IDS_DLOAD_RT_CLK_MENU_CANCEL_ENG</td>
+      <td width="582">&amp;Cancel</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A112+1" width="74">112</td>
+      <td width="425">IDS_DLOAD_RT_CLK_MENU_CLEAR_ENG</td>
+      <td width="582">C&amp;lear</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A113+1" width="74">113</td>
+      <td width="425">IDS_DLOAD_RT_CLK_MENU_CLEARCOMPLETE_ENG</td>
+      <td width="582">Clear Co&amp;mplete</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A114+1" width="74">114</td>
+      <td width="425">IDS_DLOAD_RT_CLK_MENU_REMOVESTALLED_ENG</td>
+      <td width="582">&amp;Remove Stalled</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A115+1" width="74">115</td>
+      <td width="425">IDS_DLOAD_CANCELLED_ENG</td>
+      <td width="582">Cancelled...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A116+1" width="74">116</td>
+      <td width="425">IDS_DLOAD_FETCHINGINFO_ENG</td>
+      <td width="582">Fetching file info...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A117+1" width="74">117</td>
+      <td width="425">IDS_DLOAD_RESUMING_ENG</td>
+      <td width="582">Resuming download...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A118+1" width="74">118</td>
+      <td width="425">IDS_DLOAD_ONE_HUNDRED_PERCENT_ENG</td>
+      <td class="xl24" align="right" x:num="1" width="582">
+        <p align="left">100%</p>
+      </td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A119+1" width="74">119</td>
+      <td width="425">IDS_DLOAD_FAILED_TO_WRITE_LOCAL_FILE_ENG</td>
+      <td width="582">Failed to Write Local File</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A120+1" width="74">120</td>
+      <td width="425">IDS_DLOAD_TIME_REMAINING_ENG</td>
+      <td width="582">%d%% of %s [%s/sec], %s remaining</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A121+1" width="74">121</td>
+      <td width="425">IDS_ULOAD_BTN_REMOVALL_ENG</td>
+      <td width="582">&amp;Remove All Upload</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A122+1" width="74">122</td>
+      <td width="425">IDS_ULOAD_BTN_CANCELCLEAR_ENG</td>
+      <td width="582">&amp;Cancel/Clear Selected Upload(s)</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A123+1" width="74">123</td>
+      <td width="425">IDS_ULOAD_LIST_STARTINGUP_ENG</td>
+      <td width="582">Starting Up</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A124+1" width="74">124</td>
+      <td width="425">IDS_ULOAD_STATUS_DONE_ENG</td>
+      <td width="582">Done</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A125+1" width="74">125</td>
+      <td width="425">IDS_ULOAD_STATUS_FAILED_ENG</td>
+      <td width="582">Failed</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A126+1" width="74">126</td>
+      <td width="425">IDS_ULOAD_STATUS_STALLED_ENG</td>
+      <td width="582">Stalled</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A127+1" width="74">127</td>
+      <td width="425">IDS_ULOAD_TIMEREMAINING_ENG</td>
+      <td width="582">%s remaining</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A128+1" width="74">128</td>
+      <td width="425">IDS_COL_HEADING_CHUNKSUPLOADED_ENG</td>
+      <td width="582">Chunks Uploaded</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A129+1" width="74">129</td>
+      <td width="425">IDS_COL_HEADING_DESTINATION_VIP_ENG</td>
+      <td width="582">Destination Virtual Address</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A130+1" width="74">130</td>
+      <td width="425">IDS_ULOAD_RT_CLK_MENU_CAPTION_ENG</td>
+      <td width="582">MUTE UPLOADS...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A131+1" width="74">131</td>
+      <td width="425">IDS_ULOAD_RT_CLK_MENU_CANCEL_ENG</td>
+      <td width="582">&amp;Cancel</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A132+1" width="74">132</td>
+      <td width="425">IDS_ULOAD_RT_CLK_MENU_REMOVEALL_ENG</td>
+      <td width="582">&amp;Remove All</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A133+1" width="74">133</td>
+      <td width="425">IDS_SETTINGS_INBOUND_LIMIT_ENG</td>
+      <td width="582">Inbound Limit:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A134+1" width="74">134</td>
+      <td width="425">IDS_SETTINGS_OUTBOUND_LIMIT_ENG</td>
+      <td width="582">Outbound Limit:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A135+1" width="74">135</td>
+      <td width="425">IDS_SETTINGS_MSG_SEC_LIMIT_ENG</td>
+      <td width="582">msg/sec ( -1 == NO LIMIT )</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A136+1" width="74">136</td>
+      <td width="425">IDS_SETTINGS_INITIAL_DL_TIMEOUT_ENG</td>
+      <td width="582">Initial D/L Timeout (secs):</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A137+1" width="74">137</td>
+      <td width="425">IDS_SETTINGS_DELETE_CANCELED_DL_ENG</td>
+      <td width="582">Delete Canceled D/Ls:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A138+1" width="74">138</td>
+      <td width="425">IDS_SETTINGS_MESSAGE_LIMIT_GROUP_ENG</td>
+      <td width="582">Message Limits Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A139+1" width="74">139</td>
+      <td width="425">IDS_SETTINGS_DLOAD_SETTINGS_GROUP_ENG</td>
+      <td width="582">Download Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A140+1" width="74">140</td>
+      <td width="425">IDS_SETTINGS_CONNECTIONS_GROUP_ENG</td>
+      <td width="582">Connection Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A141+1" width="74">141</td>
+      <td width="425">IDS_SETTINGS_MAINTAIN_ATLEAST_ENG</td>
+      <td width="582">Maintain at least:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A142+1" width="74">142</td>
+      <td width="425">IDS_SETTINGS_NEIGHBORCONNECTIONS_ENG</td>
+      <td width="582">neighbor connections</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A143+1" width="74">143</td>
+      <td width="425">IDS_SETTINGS_UPLOAD_CONTROLS_GROUP_ENG</td>
+      <td width="582">Upload Controls Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A144+1" width="74">144</td>
+      <td width="425">IDS_SETTINGS_MAX_UPLOADS_ENG</td>
+      <td width="582">Maximum Uploads:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A145+1" width="74">145</td>
+      <td width="425">IDS_SETTINGS_MAX_UPLOADS_PER_VIP_ENG</td>
+      <td width="582">Maximum Uploads Per VIP:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A146+1" width="74">146</td>
+      <td width="425">IDS_BTN_BROWSE_ENG</td>
+      <td width="582">&amp;Browse...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A147+1" width="74">147</td>
+      <td width="425">IDS_SETTINGS_SHAREFILESFROM_ENG</td>
+      <td width="582">Share files from:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A148+1" width="74">148</td>
+      <td width="425">IDS_SETTINGS_INCOMING_FOLDER_ENG</td>
+      <td width="582">Incoming D/Ls folder:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A149+1" width="74">149</td>
+      <td width="425">IDS_SETTINGS_HASH_FOLDER_ENG</td>
+      <td width="582">Hash files folder:</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A150+1" width="74">150</td>
+      <td width="425">IDS_SETTINGS_SAVE_SETTINGS_BTN_ENG</td>
+      <td width="582">&amp;Save Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A151+1" width="74">151</td>
+      <td width="425">IDS_SETTINGS_WEB_GROUP_ENG</td>
+      <td width="582">Web Resources</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A152+1" width="74">152</td>
+      <td width="425">IDS_SETTINGS_ALLOW_ATMOST_ENG</td>
+      <td width="582">Allow at most</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A153+1" width="74">153</td>
+      <td width="425">IDS_NO_ENG</td>
+      <td width="582">NO</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A154+1" width="74">154</td>
+      <td width="425">IDS_YES_ENG</td>
+      <td width="582">YES</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A155+1" width="74">155</td>
+      <td width="425">IDS_SETTINGS_LANGUAGE_GROUP_ENG</td>
+      <td width="582">Language Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A156+1" width="74">156</td>
+      <td width="425">IDS_BROWSE_SHARING_FOLDER_CAPTION_ENG</td>
+      <td width="582">Select MUTE Sharing Folder...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A157+1" width="74">157</td>
+      <td width="425">IDS_BROWSE_INCOMING_FOLDER_CAPTION_ENG</td>
+      <td width="582">Select MUTE Incoming Folder...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A158+1" width="74">158</td>
+      <td width="425">IDS_BROWSE_HASH_FOLDER_CAPTION_ENG</td>
+      <td width="582">Select MUTE Hash Folder...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A159+1" width="74">159</td>
+      <td width="425">IDS_MUTE_SHARE_FOLDER_DOESNT_EXIST_ENG</td>
+      <td width="582">Sharing folder does not exist.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A160+1" width="74">160</td>
+      <td width="425">IDS_MUTE_INCOMING_FOLDER_DOESNT_EXIST_ENG</td>
+      <td width="582">Incoming folder does not exist.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A161+1" width="74">161</td>
+      <td width="425">IDS_MUTE_HASH_FOLDER_DOESNT_EXIST_ENG</td>
+      <td width="582">Hash folder does not exist.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A162+1" width="74">162</td>
+      <td width="425">IDS_SETTINGS_LANGUAGERESTART_MSG_CAPTION_ENG</td>
+      <td width="582">Mute Language Settings</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A163+1" width="74">163</td>
+      <td width="425">IDS_SETTINGS_LANGUAGERESTART_MSG_TEXT_ENG</td>
+      <td width="582">Restart MUTE to use new language settings.</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A164+1" width="74">164</td>
+      <td width="425">IDS_DLOAD_QUEUE_ENG</td>
+      <td width="582">Queue…</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A165+1" width="74">165</td>
+      <td x:str="IDS_DLOAD_QUEUED_ENG " width="425">IDS_DLOAD_QUEUED_ENG</td>
+      <td width="582">queued</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A166+1" width="74">166</td>
+      <td x:str="IDS_DLOAD_QUEUED_SEARCHING_ENG " width="425">IDS_DLOAD_QUEUED_SEARCHING_ENG</td>
+      <td width="582">Queue searching...</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A167+1" width="74">167</td>
+      <td x:str="IDS_MUTE_HELP_ENG " width="425">IDS_MUTE_HELP_ENG</td>
+      <td width="582">Help</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A168+1" width="74">168</td>
+      <td x:str="IDS_MUTE_ABOUT_ENG " width="425">IDS_MUTE_ABOUT_ENG</td>
+      <td width="582">About MUTE</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A169+1" width="74">169</td>
+      <td x:str="IDS_TAB_TITLE_SHAREDFILES_TEXT_ENG" width="425">IDS_TAB_TITLE_SHAREDFILES_TEXT_ENG</td>
+      <td width="582">Shared Files</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A170+1" width="74">170</td>
+      <td x:str="IDS_REFRESH_BUTTON_TEXT_ENG " width="425">IDS_REFRESH_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Refresh</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A171+1" width="74">171</td>
+      <td x:str="IDS_SHARED_FILES_EXPORT_BUTTON_TEXT_ENG " width="425">IDS_SHARED_FILES_EXPORT_BUTTON_TEXT_ENG</td>
+      <td width="582">&amp;Export List</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A172+1" width="74">172</td>
+      <td x:str="IDS_SHARED_FILES_EXPORT_DLG_CAPTION_TEXT_ENG " width="425">IDS_SHARED_FILES_EXPORT_DLG_CAPTION_TEXT_ENG</td>
+      <td width="582">Export List</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A173+1" width="74">173</td>
+      <td x:str="IDS_DLOAD_RT_CLK_MENU_SEARCH_QUEUE_ITEM_NEXT_ENGTE_ABOUT_ENG " width="450">IDS_DLOAD_RT_CLK_MENU_SEARCH_QUEUE_ITEM_NEXT_ENG</td>
+      <td width="582">&amp;Search Queue Item Next...</td>
+    </tr>
+
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A174+1" width="74">174</td>
+      <td x:str="IDS_UPLOADS_UPLOADS_SHOWING_LABEL_ENG " width="450">IDS_UPLOADS_UPLOADS_SHOWING_LABEL_ENG</td>
+      <td width="582"># Uploads Showing:</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A175+1" width="74">175</td>
+      <td x:str="IDS_UPLOADS_TOTAL_CHUNKS_UPLOADED_LABEL_ENG " width="450">IDS_UPLOADS_TOTAL_CHUNKS_UPLOADED_LABEL_ENG</td>
+      <td width="582">Total Chunks Uploaded:</td>
+    </tr>
+    
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A176+1" width="74">176</td>
+      <td x:str="IDS_SETTINGS_PORT_CHANGE_RESTART_TEXT_ENG" width="450">IDS_SETTINGS_PORT_CHANGE_RESTART_TEXT_ENG</td>
+      <td width="582">Restart MUTE for Port Settings to take effect.</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">177</td>
+      <td x:str="IDS_SETTINGS_PORT_CHANGE_RESTART_CAPTION_ENG" width="450">IDS_SETTINGS_PORT_CHANGE_RESTART_CAPTION_ENG</td>
+      <td width="582">Mute Port Settings</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">178</td>
+      <td x:str="IDS_NOTCONNECTED_ENG" width="450">IDS_NOTCONNECTED_ENG</td>
+      <td width="582">Not Connected</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">179</td>
+      <td x:str="IDS_CONNECTED_ENG" width="450">IDS_CONNECTED_ENG</td>
+      <td width="582">Connected</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">180</td>
+      <td x:str="IDS_UUSERS_ENG" width="450">IDS_UUSERS_ENG</td>
+      <td width="582">Users</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">181</td>
+      <td x:str="IDS_TRAFFIC_TEXT_ENG" width="450">IDS_TRAFFIC_TEXT_ENG</td>
+      <td width="582">Stats:</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">182</td>
+      <td x:str="IDS_SEARCH_RESULTS_LBL_ENG" width="450">IDS_SEARCH_RESULTS_LBL_ENG</td>
+      <td width="582">Search Results...</td>
+    </tr>
+
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">183</td>
+      <td x:str="IDS_UPDOWN_ENG" width="450">IDS_UPDOWN_ENG</td>
+      <td width="582">Up: %s | Down: %s</td>
+    </tr>
+
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td class="xl25" style="height: 12.75pt" height="17" x:num x:fmla="=+A177+1" width="74">184</td>
+      <td x:str="IDS_MUTENET_ENG" width="450">IDS_MUTENET_ENG</td>
+      <td width="582">mute-net</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<table style="table-layout: fixed; border-collapse: collapse" cellSpacing="0" cellPadding="0" width="1094" border="3" x:str>
+  <tbody>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" width="1086" height="17">
+        <p align="center"><font size="4"><a name="Sample language file">Sample
+        language file (french) following the&nbsp; <b>1 &quot;<i>string</i>&quot;</b>
+        syntax </a></font></td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" width="1086" height="17"><a name="NewfrançaisLHT"><span style="mso-spacerun: yes">&nbsp;&nbsp;
+        </span>1<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Pas de
+        résultat trouvé !&quot;</a></td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>2<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Premier
+        démarrage. &quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>3<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Génération
+        d'une paire de clés.\nMerci de patienter.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>4<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Premier
+        démarrage.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>5<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Générateur
+        de clé\n Choisissez une longueur de clé.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>6<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Adresse:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>7<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Port:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>8<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;&amp;Ajouter
+        un hôte.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>9<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;Démarrage
+        en cours.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>10<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Vider
+        le répertoire de téléchargement&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>11<span style="mso-spacerun: yes">&nbsp; </span>&quot;E&amp;xplorer
+        les fichiers entrants&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>12<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Explorer
+        les fichiers partagés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>13<span style="mso-spacerun: yes">&nbsp; </span>&quot;Effacer
+        le(s) téléchargement(s) terminé(s)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>14<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Effacer
+        le(s) téléchargement(s) bloqué(s) ou en échec&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>15<span style="mso-spacerun: yes">&nbsp; </span>&quot;Annuler et
+        effacer le(s) téléchargement(s) sélectionné(s)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>16<span style="mso-spacerun: yes">&nbsp; </span>&quot;Chercher&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>17<span style="mso-spacerun: yes">&nbsp; </span>&quot;Téléchargements&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>18<span style="mso-spacerun: yes">&nbsp; </span>&quot;Partagés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>19<span style="mso-spacerun: yes">&nbsp; </span>&quot;Connexions&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>20<span style="mso-spacerun: yes">&nbsp; </span>&quot;Préférences&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>21<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Restaurer&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>22<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Quitter&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>23<span style="mso-spacerun: yes">&nbsp; </span>&quot;Tentative
+        de connexion à<span style="mso-spacerun: yes">&nbsp; </span>%s :
+        %d&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>24<span style="mso-spacerun: yes">&nbsp; </span>&quot;Premier démarrage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt; mso-ignore: colspan" height="17" x:str="    25  &quot;Etes-vous derrière un pare-feu qui pourrait\r\n bloquer les connexions entrantes ?\r\n(En cas doute, cliquez OUI.)&quot;    " width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>25<span style="mso-spacerun: yes">&nbsp; </span>&quot;Etes-vous
+        derrière un pare-feu qui pourrait\r\n bloquer les connexions entrantes
+        ?\r\n(En cas doute, cliquez OUI.)&quot;<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</span></td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>26<span style="mso-spacerun: yes">&nbsp; </span>&quot;Arrêt du
+        partage de fichiers\n&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>27<span style="mso-spacerun: yes">&nbsp; </span>&quot;Sauvegarde
+        des données aléatoires pour la prochaine utilisation\n&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>28<span style="mso-spacerun: yes">&nbsp; </span>&quot;Arrêt du
+        routeur de messages\n&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>29<span style="mso-spacerun: yes">&nbsp; </span>&quot;Tous les
+        services sont stoppés. Arrêt imminent\n&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>30<span style="mso-spacerun: yes">&nbsp; </span>&quot;Parcourir
+        une fois le répertoire des fichiers partagés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>31<span style="mso-spacerun: yes">&nbsp; </span>&quot;Parcourir
+        le répertoire des fichiers téléchargés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>32<span style="mso-spacerun: yes">&nbsp; </span>&quot;Vider le répertoire
+        des fichiers téléchargés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>33<span style="mso-spacerun: yes">&nbsp; </span>&quot;Echec&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>34<span style="mso-spacerun: yes">&nbsp; </span>&quot;Non trouvé&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>35<span style="mso-spacerun: yes">&nbsp; </span>&quot;Fichier
+        corrompu&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>36<span style="mso-spacerun: yes">&nbsp; </span>&quot;Annulation
+        en cours...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>37<span style="mso-spacerun: yes">&nbsp; </span>&quot;Terminé&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>38<span style="mso-spacerun: yes">&nbsp; </span>&quot;100%
+        de&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>39<span style="mso-spacerun: yes">&nbsp; </span>&quot;Tentative
+        de reprise...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>40<span style="mso-spacerun: yes">&nbsp; </span>&quot;Le répertoire
+        de fichiers partagés n'existe pas.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>41<span style="mso-spacerun: yes">&nbsp; </span>&quot;MUTE : :
+        Erreur&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>42<span style="mso-spacerun: yes">&nbsp; </span>&quot;Effacer les
+        téléchargements en cours...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>43<span style="mso-spacerun: yes">&nbsp; </span>&quot;Etes-vous sûr
+        de vouloir effacer les téléchargements en cours ?&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>44<span style="mso-spacerun: yes">&nbsp; </span>&quot;MUTE:
+        Erreur d'effacement du répertoire des fichiers téléchargés...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>45<span style="mso-spacerun: yes">&nbsp; </span>&quot;Annulez
+        d'abord tous les téléchargements en cours !&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>46<span style="mso-spacerun: yes">&nbsp; </span>&quot;Le répertoire
+        des fichiers téléchargés n'existe pas&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>47<span style="mso-spacerun: yes">&nbsp; </span>&quot;512 bits<span style="mso-spacerun: yes">&nbsp;&nbsp;
+        </span>(faible, mais rapide)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>48<span style="mso-spacerun: yes">&nbsp; </span>&quot;1024 bits<span style="mso-spacerun: yes">&nbsp;
+        </span>(recommandé)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>49<span style="mso-spacerun: yes">&nbsp; </span>&quot;1536 bits<span style="mso-spacerun: yes">&nbsp;
+        </span>(fort, mais lent)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>50<span style="mso-spacerun: yes">&nbsp; </span>&quot;2048 bits<span style="mso-spacerun: yes">&nbsp;
+        </span>(très fort et très lent)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>51<span style="mso-spacerun: yes">&nbsp; </span>&quot;4096 bits<span style="mso-spacerun: yes">&nbsp;
+        </span>(dépassement de capacité probable)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>52<span style="mso-spacerun: yes">&nbsp; </span>&quot;Création
+        de clé\nChoisissez une taille de clé&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>53<span style="mso-spacerun: yes">&nbsp; </span>&quot;Premier démarrage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>54<span style="mso-spacerun: yes">&nbsp; </span>&quot;Saisie
+        d'une série aléatoire&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt; mso-ignore: colspan" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>55<span style="mso-spacerun: yes">&nbsp; </span>&quot;Série aléatoire
+        -- Entrez des caractères aléatoirement:\n(Plus il y a d'éléments
+        -&gt; plus la série est sûre)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>56<span style="mso-spacerun: yes">&nbsp; </span>&quot;La clé a
+        été générée en \n%d secondes&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>57<span style="mso-spacerun: yes">&nbsp; </span>&quot;MUTE est en
+        cours de fermeture&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt; mso-ignore: colspan" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>58<span style="mso-spacerun: yes">&nbsp; </span>&quot;Vous avez
+        tenté de quitter MUTE\n alors que des téléchargements sont en cours.\nVoulez-vous
+        vraiment arrêter MUTE ?&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>59<span style="mso-spacerun: yes">&nbsp; </span>&quot;Adresse&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>60 &quot;Port&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>61<span style="mso-spacerun: yes">&nbsp; </span>&quot;Envoyé&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>62 &quot;En attente&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>63 &quot;Abandonné&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>64 &quot;Connexions de MUTE&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>65<span style="mso-spacerun: yes">&nbsp; </span>&quot;Adresse IP
+        invalide&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>66 &quot;Recherche en cours...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>67<span style="mso-spacerun: yes">&nbsp; </span>&quot;Inactif...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>68<span style="mso-spacerun: yes">&nbsp; </span>&quot;Purger le répertoire
+        de hachage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>69<span style="mso-spacerun: yes">&nbsp; </span>&quot;++ajouté
+        aux téléchargements++&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>70<span style="mso-spacerun: yes">&nbsp; </span>&quot;Enregistrer
+        les résultats...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>71 &quot;Rechercher le texte :&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>72 &quot;Recherche booléenne:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>73 &quot;ET&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>74 &quot;OU&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>75<span style="mso-spacerun: yes">&nbsp; </span>&quot;TOUT LE
+        TEXTE&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>76<span style="mso-spacerun: yes">&nbsp; </span>&quot;Exclure le
+        texte:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>77<span style="mso-spacerun: yes">&nbsp; </span>&quot;Taille max
+        fichiers (kb)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>78<span style="mso-spacerun: yes">&nbsp; </span>&quot;Bouléen
+        taille fichier&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>79<span style="mso-spacerun: yes">&nbsp; </span>&quot;AU MOINS&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span><span style="mso-spacerun: yes">80</span> &quot;AU PLUS&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>81<span style="mso-spacerun: yes">&nbsp; </span>&quot;----FICHIER----
+        , ----TAILLE---- , ----HACHAGE---- , ----ADRESSE HOTE VIRTUEL----&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>82<span style="mso-spacerun: yes">&nbsp; </span>&quot;Purger les
+        hachages MUTE...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>83<span style="mso-spacerun: yes">&nbsp; </span>&quot;Etes-vous sûr
+        de vouloir purger les hachages MUTE ?&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>84<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Enregistrer
+        tout&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>85<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Télécharger&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>86<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Effacer
+        les résultats&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>87<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Chercher&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>88<span style="mso-spacerun: yes">&nbsp; </span>&quot;A&amp;rrêter&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>89<span style="mso-spacerun: yes">&nbsp; </span>&quot;&amp;Purger
+        le répertoire de hachage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span><span style="mso-spacerun: yes">90</span><span style="mso-spacerun: yes">&nbsp;
+        </span>&quot;Rechercher ces mots-clés (séparez-les par des espaces):&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>91<span style="mso-spacerun: yes">&nbsp; </span>&quot;Exclure ces
+        mots-clés (séparez-les par des espaces):&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>92 &quot;Fichier&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>93 &quot;Type&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>94 &quot;Taille&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>95 &quot;Hachage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>96 &quot;Adresse virtuelle de l'hôte&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>97 &quot;RECHERCHE MUTE...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>98 &quot;&amp;Téléchargement&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>99 &quot;&amp;Parcourir les fichiers partagés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span><span style="mso-spacerun: yes">100</span> &quot;P&amp;arcourir
+        les fichiers téléchargés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>101 &quot;&amp;Purger les fichiers téléchargés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>102 &quot;Effacer le(s) téléchargement(s) terminé(s)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>103 &quot;&amp;Effacer le(s) téléchargement(s) bloqué(s) ou en
+        échec&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>104 &quot;A&amp;nnuler le(s) téléchargement(s) selectionné(s)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>105 &quot;Statut&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>106 &quot;# Reprises&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>107 &quot;Heure de début &quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>108 &quot;Dernière mise à jour&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>109 &quot;Qualité d'acheminement&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>110 &quot;MUTE : TELECHARGEMENT...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>111 &quot;&amp;Annuler&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>112 &quot;E&amp;ffacer&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>113 &quot;Effacement terminé&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>114 &quot;&amp;Supprimer le(s) téléchargement(s) arrêté(s)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>115 &quot;Annulé...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>116 &quot;Recherche des infos fichier...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>117 &quot;Reprise du téléchargement...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>118 &quot;100%&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>119 &quot;Erreur d'écriture du fichier local&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>120 &quot;%d%% de %s [%s/sec], %s restant(es)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>121 &quot;&amp;Supprimer tous les partages en cours&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>122 &quot;&amp;Annuler/Effacer le(s) partages(s) sélectionné(s)&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>123 &quot;Démarrage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>124 &quot;Terminé&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>125 &quot;Echec&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>126 &quot;Bloqué&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>127 &quot;%s restant&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>128 &quot;Tronçons téléchargés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>129 &quot;Adresse virtuelle de destination&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>130 &quot;MUTE : PARTAGEs...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>131 &quot;&amp;Annuler&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>132 &quot;&amp;Supprimer tout&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>133 &quot;Entrées autorisées :&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>134 &quot;Partages autorisés :&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>135 &quot;msg/sec ( -1 == PAS DE LIMITE )&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>136 &quot;Initial D/L Timeout (secs):&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>137 &quot;Effacer les opérations annulées:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>138 &quot;Préférences messages&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>139 &quot;Préférences téléchargements&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>140 &quot;Préférences connexion&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>141 &quot;Maintenir au moins:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>142 &quot;connexions voisinnage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>143 &quot;Préférences partage&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>144 &quot;Nb max de partages:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>145 &quot;Nb max partages VIP:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>146 &quot;&amp;Parcourir...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>147 &quot;Répertoire de partage:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>148 &quot;Répertoire doc entrants:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>149 &quot;Répertoire de hachage:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>150 &quot;&amp;Valider les préférences&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>151 &quot;Ressources internet&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>152 &quot;Autoriser au maximum&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>153 &quot;NON&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>154 &quot;OUI&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>155 &quot;Langues&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>156 &quot;Sélection du répertoire des fichiers partagés
+        MUTE...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>157 &quot;Sélection du répertoire des fichiers entrants
+        MUTE...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>158 &quot;Sélection du répertoire de hachage<span style="mso-spacerun: yes">&nbsp;
+        </span>MUTE...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>159 &quot;Le répertoire de fichiers partagés n'existe
+        pas.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>160 &quot;Le répertoire de fichiers entrants n'existe pas.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>161 &quot;Le répertoire de hachage n'existe pas.&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>162 &quot;Changement de langue&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>163 &quot;La modification de la langue prendra effet au prochain
+        démarrage de MUTE&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>164 &quot;Attente&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>165 &quot;Mise en attente&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>166 &quot;Recherche la file d'attente&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>167 &quot;Aide&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>168 &quot;A propos de MUTE&quot;</td>
+    </tr>    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>169 &quot;Fichiers Partagés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>170 &quot;&amp;Mettre la liste à jour&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>171 &quot;&amp;Exporter la liste&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>172 &quot;Exporter la liste de fichiers partagés&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>173 &quot;&amp;Item suivant dans la file de recherche&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>174 &quot;# envois montrés:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>175 &quot;Total tronçons envoyé:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>176 &quot;La modification de 'PORT' prendra effet au prochain démarrage de MUTE:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>177 &quot;Changement de Port:&quot;</td>
+    </tr>
+    
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>178 &quot;Non Connecté&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>179 &quot;Connecté&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>180 &quot;Utilisateurs&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>181 &quot;Stats:&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>182 &quot;Les résultats de Recherche...&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>183 &quot;E: %s | R: %s&quot;</td>
+    </tr>
+    <tr style="HEIGHT: 12.75pt" height="17">
+      <td style="height: 12.75pt" height="17" width="1086"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+        </span>184 &quot;mute-net&quot;</td>
+    </tr>   
+  </tbody>
+</table>
+
+</body>
+
+</html>
+

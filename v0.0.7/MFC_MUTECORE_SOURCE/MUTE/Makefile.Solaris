@@ -1,0 +1,48 @@
+#
+# Modification History
+#
+# 2002-September-9    Jason Rohrer
+# Created.
+#
+# 2002-November-14    Jason Rohrer
+# pthread *is* actually needed for solaris.
+#
+# 2003-May-21    Jason Rohrer
+# Added library needed for nanosleep (pointed out by a slashdotter).
+#
+# 2003-November-2   Jason Rohrer
+# Moved minorGems platform prefixes into platform-specific Makefile templates.
+#
+
+
+##
+# The common Solaris portion of Makefiles.
+# Should not be made manually---used by configure to build Makefiles.
+##
+
+
+PLATFORM_COMPILE_FLAGS = -DSOLARIS
+
+# all sorts of other libraries needed for Solaris, including pthread
+# -lrt is for nanosleep
+PLATFORM_LINK_FLAGS = -lsocket -lnsl -lresolv -lpthread -lrt
+
+
+# All platforms but OSX support g++ and need no linker hacks
+GXX=g++ 
+LINK_FLAGS = 
+
+
+
+##
+# Platform-specific minorGems file path prefixes
+##
+
+PLATFORM = Linux
+PLATFORM_PATH = linux
+
+TIME_PLATFORM = Unix
+TIME_PLATFORM_PATH = unix
+
+DIRECTORY_PLATFORM = Unix
+DIRECTORY_PLATFORM_PATH = unix

@@ -1,0 +1,7 @@
+
+
+WX_CONFIG_LOCATION=/data5/jcr13/downloads/wxGTK-2.4.2/wx-config
+
+
+g++ -g GuiApp.cpp `$WX_CONFIG_LOCATION --libs` `$WX_CONFIG_LOCATION --cxxflags` -o fileSharingMUTE -I../../../../.. ../../../../layers/messageRouting/libmuteMessageRouter.a ../../../../otherApps/fileSharing/libmuteFileShare.a ../../../../crypto/libcrypto.a
+

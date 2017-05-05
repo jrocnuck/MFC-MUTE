@@ -1,0 +1,2 @@
+g++ -g -I../../.. -o testAES testAES.cpp ../CryptoUtils.o ../AESEncryptor.o ../AESDecryptor.o ../../crypto/libcrypto.a  ../../../minorGems/system/linux/MutexLockLinux.o
+

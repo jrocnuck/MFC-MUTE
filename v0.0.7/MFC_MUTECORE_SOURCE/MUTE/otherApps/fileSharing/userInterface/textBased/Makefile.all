@@ -1,0 +1,82 @@
+#
+# Modification History
+#
+# 2003-October-14    Jason Rohrer
+# Created.
+#
+# 2004-January-5    Jason Rohrer
+# Added explicit library dependencies.
+#
+# 2004-March-29    Jason Rohrer
+# Added minorGems objects to the build step.
+#
+
+
+##
+# The portion of MUTE file sharing text-based-UI  Makefiles common to all 
+# platforms.
+# Should not be made manually---used by MUTE/configure to build Makefiles.
+##
+
+
+
+
+ROOT_PATH = ../../../../..
+
+
+
+
+LAYER_SOURCE = \
+ textFileSharingMUTE.cpp 
+
+LAYER_OBJECTS = ${LAYER_SOURCE:.cpp=.o}
+
+NEEDED_MINOR_GEMS_OBJECTS = 
+
+CRYPTO_LIB = ${ROOT_PATH}/MUTE/crypto/libcrypto.a
+ROUTING_LIB = ${ROOT_PATH}/MUTE/layers/messageRouting/libmuteMessageRouter.a
+FILE_SHARING_LIB = ${ROOT_PATH}/MUTE/otherApps/fileSharing/libmuteFileShare.a
+
+
+TEST_SOURCE = 
+TEST_OBJECTS = ${TEST_SOURCE:.cpp=.o}
+
+
+
+DEPENDENCY_FILE = Makefile.dependencies
+
+
+# targets
+
+all: textFileSharingMUTE
+clean:
+	rm -f ${DEPENDENCY_FILE} ${LAYER_OBJECTS} ${TEST_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} textFileSharingMUTE
+
+
+
+
+textFileSharingMUTE: ${LAYER_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} ${FILE_SHARING_LIB} ${ROUTING_LIB} ${CRYPTO_LIB}
+	${EXE_LINK} -o textFileSharingMUTE ${LAYER_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} ${FILE_SHARING_LIB} ${ROUTING_LIB} ${CRYPTO_LIB} ${PLATFORM_LINK_FLAGS}
+
+
+# targets that throw errors if the libraries need to be re-made
+
+${FILE_SHARING_LIB}:
+	$(error ${FILE_SHARING_LIB} is outdated.  Please re-make it)
+${ROUTING_LIB}:
+	$(error ${ROUTING_LIB} is outdated.  Please re-make it)
+${CRYPTO_LIB}:
+	$(error ${CRYPTO_LIB} is outdated.  Please re-make it)
+
+
+
+
+# build the dependency file
+${DEPENDENCY_FILE}: ${LAYER_SOURCE} ${TEST_SOURCE}
+	rm -f ${DEPENDENCY_FILE}
+	${COMPILE} -I${ROOT_PATH} -MM ${LAYER_SOURCE} ${TEST_SOURCE} >> ${DEPENDENCY_FILE}
+
+
+include ${DEPENDENCY_FILE}
+
+

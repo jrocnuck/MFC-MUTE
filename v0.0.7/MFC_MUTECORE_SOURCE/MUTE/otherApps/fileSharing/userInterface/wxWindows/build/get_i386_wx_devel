@@ -1,0 +1,5 @@
+wget http://aleron.dl.sourceforge.net/sourceforge/wxwindows/wxGTK-static-2.4.2-1.i386.rpm
+rpm2cpio wxGTK-static-2.4.2-1.i386.rpm | cpio -ivd
+
+wget http://aleron.dl.sourceforge.net/sourceforge/wxwindows/wxGTK-devel-2.4.2-1.i386.rpm
+rpm2cpio wxGTK-devel-2.4.2-1.i386.rpm | cpio -ivd

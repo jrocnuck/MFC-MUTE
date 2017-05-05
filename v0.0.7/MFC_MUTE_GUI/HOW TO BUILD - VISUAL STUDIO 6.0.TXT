@@ -1,0 +1,144 @@
+Contents of what this document contains by section #:
+
+1. File/Directory Layout 
+2. SPECIAL VISUAL STUDIO COMPILER SETTINGS
+3. How does JROC build the projects?
+4. How does JROC use the .exe's that are built?
+
+--------------------------------------------------------------
+
+
+/**********************************************
+	---- 1. File/Directory Layout -------	
+***********************************************/
+
+ 
+ Highest level (both of these directories need to be together
+				in the same directory at the same level ):
+
+	i.e. Assume you unzipped the source code in the c:\myprojects directory:
+	  c:\myprojects\
+	    --- c:\myprojects\MFC_MUTE_GUI
+		--- c:\myprojects\MFC_MUTECORE_SOURCE
+
+      directory MFC_MUTE_GUI --> contains all MFC GUI and APP files and resources
+									 in this directory will be Release and Debug dir where
+									 the .exe files will be built using the standard build 
+									 buttons in Visual C++.
+
+	  directory MFC_MUTECORE_SOURCE --> contains very slightly modified version of Jason's
+									original MUTE 0.3 core source code.
+
+
+  After building, the .exe files are located in:
+   ...\MFC_MUTE_GUI\Debug
+   ...\MFC_MUTE_GUI\Release
+
+   where "..." would be replaced with your particular directory where you
+   unzipped/unpackaged the original source code files.
+
+/**********************************************
+	---- End File/Directory Layout Section -------
+***********************************************/
+
+
+
+
+
+
+/***************************************************************
+	---- 2. SPECIAL VISUAL STUDIO COMPILER SETTINGS -------	
+******************************************************************/
+	
+	-- disclaimer: I (JROC) originally wrote and coded this with the MS PSDK installed.
+				   I tried not to rely on functions that are only present with the PSDK,
+				   but if you try to compile without it and have problems, then it is
+				   probably necessary to compile this.
+
+				   my original setup: VC++6 pro, SP5, with PSDK July 2003 installed
+
+	A. Under the tools menu select Options, and on the "Directories tab"  
+	   add to the (Include files directory) the directory shown below to the 
+	   library search path:
+	
+	The path for me is C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\VC98\MFC\SRC.  Use some 
+	judgement to figure out where this path is relative to where you installed 
+	visual studio.
+
+
+	The remainder of the project settings should be captured in the .dsp file
+	included with the release.  Despite that, I had to add these things to the default
+	generated .dsp to get things rolling:
+	
+	FOR ALL BUILDS (Release & Debug) :
+		a) Set up for static MFC libraries to avoid the "can't find MFC40.dll" type stuff.
+
+		b) In Project Settings under C/C++ tab in the Preprocessor category under the for Preprocessor Directives, added WIN_32,
+		   since it seems that is what wxWindows uses rather than WIN32 with no underscore
+
+		c) Switched of the usage of Precompiled headers... man am I sick of seeing the 
+		   errors generated from using these precompiled headers
+
+		d) Under the project settings C/C++	tab in the Preprocessor category, the following 
+		   paths were added:
+
+		   .\,..\MFC_MUTECORE_SOURCE\,..\MFC_MUTECORE_SOURCE\minorGems\,..\MFC_MUTECORE_SOURCE\minorGems\io\file\win32\
+
+		   these rely on you having a directory structure as listed at the top of this file!
+		e) Under the project settings Link tab in the General category under the Object/library modules
+		   the following were added:
+
+		   ws2_32.lib Shlwapi.lib
+
+	FOR Release build:
+		a) Despite standard/default compiler settings, I had problems with running the
+		   Release build .exe due to reasons that I decided not to take time to explore.
+		   Therefore, to side step the problem, for the Release build, I turned of compiler
+		   optimizations.  Therefore, for the release build, under the C/C++ tab in the
+		   Optimizations category, I chose disable.
+
+/***************************************************************
+	---- End SPECIAL VISUAL STUDIO COMPILER SETTINGS section -------	
+******************************************************************/
+
+
+
+
+
+
+/***************************************************************
+	---- 3. How does JROC build the projects?	 -------	
+******************************************************************/
+
+JROC, locates (using windows explorer) the file MFC_MUTE_GUI.dsw in the directory
+MFC_MUTE_GUI discussed in section 1 and double clicks it to execute it.  This, if
+all things are installed correctly, opens the project/workspace in MS VC++.
+After the project/workspace is open in MS VC++, JROC then selects Build from the top level
+pull down menu, followed by selecting Batch Build from the submenu.  From the ensuing
+dialog menu, making sure both the Release and Debug builds are selected, JROC selects Rebuild All.
+
+/***************************************************************
+	---- End How does JROC build the projects? Section	 -------	
+******************************************************************/
+
+
+
+
+/***************************************************************
+	---- 4. How does JROC use the .exe's that are built? -------	
+******************************************************************/
+
+Ok... now let's say you've built the .exe(s).  How do you use the files?
+Well, the intention is that you first download the original 0.3 version
+of the MUTE program that runs on windows.  Install the program with the
+download binaries installation file for this version.  Next, copy either
+the DEBUG or RELEASE .exe (MFC_MUTE_GUI.exe) file located at this point in 
+MFC_MUTE_GUI\Release or MFC_MUTE_GUI\Debug over to the same directory
+where you installed the original copy of 0.3 MUTE.  Then just double click the
+executable in the MUTE installation directory and the program should run and
+be very similar to the original version with some slight enhancements.
+
+/***************************************************************
+	---- End How does JROC use the .exe's that are built? Section -------	
+******************************************************************/
+

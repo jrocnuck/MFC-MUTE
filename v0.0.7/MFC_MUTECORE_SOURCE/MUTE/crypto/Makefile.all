@@ -1,0 +1,159 @@
+#
+# Modification History
+#
+# 2002-September-9    Jason Rohrer
+# Created.
+#
+# 2002-September-10    Jason Rohrer
+# Moved root path to common Makefile.
+#
+# 2002-October-20    Jason Rohrer
+# Added support for debugMemory.
+#
+# 2003-August-15    Jason Rohrer
+# Added support for rijndael.
+#
+# 2003-August-18    Jason Rohrer
+# Added test program for AES key gen.
+# Added test programs for RSA encryption/decryption.
+#
+# 2003-September-9    Jason Rohrer
+# Fixed clean target.
+#
+
+
+##
+# The portion of crypto Makefiles common to all platforms.
+# Should not be made manually---used by configure to build Makefiles.
+##
+
+
+ROOT_PATH = ../..
+
+
+
+SRCS = algebra.cpp asn.cpp cbc.cpp cryptlib.cpp default.cpp des.cpp \
+ dessp.cpp eprecomp.cpp files.cpp filters.cpp \
+ hex.cpp integer.cpp iterhash.cpp misc.cpp modes.cpp mqueue.cpp \
+ nbtheory.cpp oaep.cpp pch.cpp pkcspad.cpp pubkey.cpp queue.cpp \
+ randpool.cpp rdtables.cpp rijndael.cpp rng.cpp rsa.cpp sha.cpp 
+
+OBJS = ${SRCS:.cpp=.o}
+
+
+APP_SRCS = testKeyGen.cpp testSign.cpp testSignBug.cpp testVerify.cpp \
+ testAESEncrypt.cpp testAESDecrypt.cpp testAESKeyGen.cpp testRSAEncrypt.cpp \
+ testRSADecrypt.cpp
+
+APP_OBJS = ${APP_SRCS:.cpp=.o}
+
+APPS = ${APP_OBJS:.o=}
+
+
+
+all: testKeyGen testSign testSignBug testVerify testAESEncrypt \
+ testAESDecrypt testAESKeyGen testRSAEncrypt testRSADecrypt libcrypto.a
+
+clean:
+	rm -rf ${OBJS} ${APPS} ${APP_OBJS} libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+
+
+libcrypto.a: ${OBJS}
+	${LIBRARY_LINK} libcrypto.a ${OBJS} ; ${RANLIB} libcrypto.a
+
+
+testKeyGen: testKeyGen.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testKeyGen testKeyGen.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+testSign: testSign.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testSign testSign.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+testSignBug: testSignBug.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testSignBug testSignBug.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+testVerify: testVerify.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testVerify testVerify.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+testAESEncrypt: testAESEncrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testAESEncrypt testAESEncrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+ 
+testAESDecrypt: testAESDecrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testAESDecrypt testAESDecrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+testAESKeyGen: testAESKeyGen.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testAESKeyGen testAESKeyGen.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+testRSAEncrypt: testRSAEncrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testRSAEncrypt testRSAEncrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+ 
+testRSADecrypt: testRSADecrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O}
+	${EXE_LINK} -o testRSADecrypt testRSADecrypt.o libcrypto.a ${MEMORY_TRACKER_O} ${MUTEX_LOCK_O} ${PLATFORM_LINK_FLAGS}
+
+
+
+#
+# Generated automatically with 
+# g++ -MM *.cpp
+#
+algebra.o: algebra.cpp pch.h config.h algebra.h integer.h cryptlib.h \
+ misc.h
+asn.o: asn.cpp pch.h config.h asn.h filters.h cryptlib.h misc.h \
+ smartptr.h queue.h
+cbc.o: cbc.cpp pch.h config.h cbc.h filters.h cryptlib.h misc.h \
+ smartptr.h queue.h modes.h
+cryptlib.o: cryptlib.cpp pch.h config.h cryptlib.h misc.h filters.h \
+ smartptr.h queue.h
+default.o: default.cpp pch.h config.h default.h sha.h iterhash.h \
+ cryptlib.h misc.h hmac.h des.h filters.h smartptr.h queue.h cbc.h \
+ modes.h
+des.o: des.cpp pch.h config.h misc.h des.h cryptlib.h
+dessp.o: dessp.cpp pch.h config.h des.h cryptlib.h misc.h
+eprecomp.o: eprecomp.cpp pch.h config.h eprecomp.h integer.h \
+ cryptlib.h misc.h algebra.h
+files.o: files.cpp pch.h config.h files.h cryptlib.h filters.h misc.h \
+ smartptr.h queue.h
+filters.o: filters.cpp pch.h config.h filters.h cryptlib.h misc.h \
+ smartptr.h queue.h mqueue.h
+hex.o: hex.cpp pch.h config.h hex.h cryptlib.h filters.h misc.h \
+ smartptr.h queue.h
+integer.o: integer.cpp pch.h config.h integer.h cryptlib.h misc.h \
+ modarith.h algebra.h nbtheory.h asn.h filters.h smartptr.h queue.h \
+ oids.h words.h algebra.cpp eprecomp.cpp eprecomp.h
+iterhash.o: iterhash.cpp pch.h config.h iterhash.h cryptlib.h misc.h
+misc.o: misc.cpp pch.h config.h misc.h words.h
+modes.o: modes.cpp pch.h config.h modes.h cryptlib.h misc.h
+mqueue.o: mqueue.cpp pch.h config.h mqueue.h queue.h cryptlib.h \
+ filters.h misc.h smartptr.h
+nbtheory.o: nbtheory.cpp pch.h config.h nbtheory.h integer.h \
+ cryptlib.h misc.h modarith.h algebra.h
+oaep.o: oaep.cpp pch.h config.h oaep.h pubkey.h integer.h cryptlib.h \
+ misc.h filters.h smartptr.h queue.h
+pch.o: pch.cpp pch.h config.h
+pkcspad.o: pkcspad.cpp pch.h config.h pkcspad.h cryptlib.h pubkey.h \
+ integer.h misc.h filters.h smartptr.h queue.h
+pubkey.o: pubkey.cpp pch.h config.h pubkey.h integer.h cryptlib.h \
+ misc.h filters.h smartptr.h queue.h
+queue.o: queue.cpp pch.h config.h queue.h cryptlib.h filters.h misc.h \
+ smartptr.h
+randpool.o: randpool.cpp pch.h config.h randpool.h cryptlib.h \
+ filters.h misc.h smartptr.h queue.h mdc.h sha.h iterhash.h modes.h
+rijndael.o: rijndael.cpp pch.h config.h rijndael.h \
+ cryptlib.h misc.h
+rng.o: rng.cpp pch.h config.h rng.h cryptlib.h filters.h misc.h \
+ smartptr.h queue.h
+rsa.o: rsa.cpp pch.h config.h rsa.h pkcspad.h cryptlib.h pubkey.h \
+ integer.h misc.h filters.h smartptr.h queue.h oaep.h asn.h oids.h \
+ nbtheory.h sha.h iterhash.h pubkey.cpp oaep.cpp
+sha.o: sha.cpp pch.h config.h sha.h iterhash.h cryptlib.h misc.h
+testKeyGen.o: testKeyGen.cpp hex.h cryptlib.h config.h filters.h \
+ misc.h smartptr.h queue.h rsa.h pkcspad.h pubkey.h integer.h oaep.h \
+ randpool.h files.h
+testSign.o: testSign.cpp rng.h cryptlib.h config.h filters.h misc.h \
+ smartptr.h queue.h hex.h rsa.h pkcspad.h pubkey.h integer.h oaep.h \
+ randpool.h files.h default.h sha.h iterhash.h hmac.h des.h
+testSignBug.o: testSignBug.cpp rng.h cryptlib.h config.h filters.h misc.h \
+ smartptr.h queue.h hex.h rsa.h pkcspad.h pubkey.h integer.h oaep.h \
+ randpool.h files.h default.h sha.h iterhash.h hmac.h des.h
+testVerify.o: testVerify.cpp rng.h cryptlib.h config.h filters.h misc.h \
+ smartptr.h queue.h hex.h rsa.h pkcspad.h pubkey.h integer.h oaep.h \
+ randpool.h files.h default.h sha.h iterhash.h hmac.h des.h

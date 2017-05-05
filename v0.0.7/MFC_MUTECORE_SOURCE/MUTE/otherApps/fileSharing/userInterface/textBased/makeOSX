@@ -1,0 +1,10 @@
+mkdir objs
+cp ../../../../../MUTE/otherApps/fileSharing/libmuteFileShare.a objs; cp ../../../../../MUTE/layers/messageRouting/libmuteMessageRouter.a objs; cp ../../../../../MUTE/crypto/libcrypto.a objs
+cd objs
+ar x libcrypto.a; ar x libmuteFileShare.a; ar x libmuteMessageRouter.a
+
+cd ..
+
+c++ -o textFileSharingMUTE textFileSharingMUTE.o objs/*.o
+
+rm -rf objs

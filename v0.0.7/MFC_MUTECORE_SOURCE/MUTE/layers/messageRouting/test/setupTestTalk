@@ -1,0 +1,26 @@
+rm -r talker*/* bystander*/* catcher/*
+
+mkdir -p catcher
+cp testCatcher catcher
+
+mkdir -p bystanderA
+mkdir -p bystanderB
+mkdir -p bystanderC
+mkdir -p bystanderD
+
+cp testBystander bystanderA
+mkdir -p bystanderA/settings
+echo "localhost 9000" > bystanderA/settings/seedHosts.ini
+
+cp -r bystanderA/* bystanderB
+cp -r bystanderA/* bystanderC
+cp -r bystanderA/* bystanderD
+
+
+mkdir -p talkerA
+mkdir -p talkerB
+
+cp testTalker talkerA
+cp -r bystanderA/settings talkerA
+
+cp -r talkerA/* talkerB

@@ -1,0 +1,90 @@
+#!/bin/bash
+
+#
+# Modification History
+#
+# 2004-January-15    Jason Rohrer
+# Added bash path.
+# Fixed string comparison operator.
+#
+
+
+cd MUTE
+chmod u+x ./configure
+./configure
+
+
+
+while [ -z "$userEntry" ]
+do
+    echo ""
+    echo ""
+    echo "select build:"
+
+    echo "  1 --  wxWindows graphical UI"
+    echo "  2 --  Console-only text UI"
+    echo "  q --  quit"
+
+    echo ""
+    echo -n "> "
+
+    read userEntry
+
+	
+	if [ "$userEntry" = "q" ]
+    then
+        exit
+    fi
+
+
+    # use ASCII comparison.
+
+	if [[ "$userEntry" > "2" ]]
+    then
+        userEntry=""
+    fi
+
+    if [[ "$userEntry" < "1" ]]
+    then
+        userEntry=""
+    fi
+
+done
+
+
+cd crypto
+make libcrypto.a
+
+cd ../layers/messageRouting
+make libmuteMessageRouter.a
+
+cd ../../otherApps/fileSharing
+make libmuteFileShare.a
+
+case "$userEntry" in
+
+    "1" )
+        cd userInterface/wxWindows
+        make
+        cd build
+        chmod u+x ./makeDistributions
+        ./makeDistributions latest CustomUnix
+        cp -r unix/MUTE ../../../../../../MUTE_GUI_fileSharing
+        rm -r unix
+        rm -r windows
+        cd ../../../../../../
+    ;;
+
+    "2" )
+        cd userInterface/textBased
+        make
+        cd build
+        chmod u+x ./makeDistributions
+        ./makeDistributions latest CustomUnix
+        cp -r unix/MUTE ../../../../../../MUTE_text_fileSharing
+        rm -r unix
+        rm -r windows
+        cd ../../../../../../
+    ;;
+
+esac
